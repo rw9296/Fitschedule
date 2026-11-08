@@ -21,6 +21,7 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | Service | Length | Prep shown to clients |
 | --- | --- | --- |
 | Body Comp + Aerobic FIT | 2 hours | Combination, not a Full Slate service (see Booking rules). No eating or caffeine 4 hours before. No vigorous exercise the day before. |
+| Body Comp + Aerobic FIT with Lactate | 2½ hours | Combination, not a Full Slate service. DXA first. No vigorous exercise 24 hours before; no food or caffeine 4 hours before; exercise clothes. |
 | Aerobic FIT | 90 min | VO₂ max test. No eating or caffeine 4 hours before. No vigorous exercise the day before. |
 | Body Comp FIT | 60 min | DXA scan. No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
@@ -55,12 +56,18 @@ The sync applies these when working out openings from the staff schedule.
   which is the "Aerobic FIT with Lactate" service.
 - **Body Comp (DXA) always comes first** when combined with Aerobic FIT or Aerobic FIT with Lactate.
 - **Body Comp + Aerobic FIT** (once labeled "DXA + VO₂") is not a Full Slate service. In Full Slate
-  it's Body Comp FIT then Aerobic FIT. Unconfirmed: whether one person does both parts or they can
-  be split between staff, and how long the metabolic cart is in use within the 2 hours.
-- **Body Comp + Aerobic FIT with Lactate** happens (DXA first; 60 + 120 − 30 = 2½ hours by the
-  combined rule). Not listed on the site yet; length unconfirmed.
+  it's Body Comp FIT then Aerobic FIT.
+- **Body Comp + Aerobic FIT with Lactate** (2½ hours: 60 + 120 − 30) and **Body Comp + Lactate FIT**
+  (90 min: 60 + 60 − 30) are combinations too, DXA first.
+- **Staffing for Body Comp + an aerobic test** (Aerobic FIT, Aerobic FIT with Lactate, Lactate FIT):
+  - Preferred: one person does both parts, start to finish.
+  - Allowed fallback: Rachel Watson does the DXA, then Xavier Cantu or Sammy Reyes does the aerobic
+    part. Rachel uses this when Xavier and Sammy are busy at the start time.
+  - So an opening exists if one qualified person is free for the whole block, OR Rachel is free for
+    the DXA part and Xavier or Sammy is free for the aerobic part (plus the metabolic cart).
+  - Unconfirmed: how many minutes of the shortened block are the DXA part vs the aerobic part.
 - **RMR + Body Comp FIT** is a 2-hour combination (90 + 60 − 30), not a Full Slate service. Rachel
-  Watson does all of it. RMR first is assumed (RMR must start 7:30–9 AM and needs fasting); unconfirmed.
+  Watson does all of it. RMR first, then DXA.
 - **RMR is Rachel Watson only.** No one else performs RMR, so RMR and RMR + Body Comp FIT openings
   require Rachel to be free for the whole appointment.
 
@@ -83,12 +90,12 @@ to be filled in.
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
 | Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
-| Xavier Cantu | purple | TBD | |
+| Xavier Cantu | purple | Aerobic FIT, Aerobic FIT with Lactate, Lactate FIT (rest TBD) | Takes over the aerobic part of a combo after Rachel's DXA |
 | Angeles Villarreal | teal | TBD | |
 | Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
 | Jenna Schmitz | beige | TBD | |
 | Lidia Gutierrez | gray | TBD | |
-| Sammy Reyes | green | TBD | |
+| Sammy Reyes | green | Aerobic FIT, Aerobic FIT with Lactate, Lactate FIT (rest TBD) | Takes over the aerobic part of a combo after Rachel's DXA |
 | Ellen Tally | red / salmon | TBD | |
 | Brittney Fernandez | orange | TBD | Spelled "Brittney", unlike Brittany Crim |
 | Jacob Soriano | blue | TBD | Same-looking blue as Brittany Crim |
@@ -100,6 +107,7 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Added "Body Comp + Aerobic FIT with Lactate" (2½ hours) to the site. Why: offered, DXA first.
 - **2026-11-08:** Added "RMR + Body Comp FIT" (2 hours, 7:30–9 AM starts) to the site. Why: offered together, all by Rachel.
 - **2026-11-08:** Site shows 🤘 before service names (filters, details card, time buttons); texts and
   availability.json stay plain. Why: owner's request, matches Full Slate's 🤘 prefix.
