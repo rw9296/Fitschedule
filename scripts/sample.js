@@ -41,7 +41,7 @@ const patterns = [
   [{ time: '08:30', service: 'Body Comp FIT' }, { time: '10:30', service: 'Body Comp + Aerobic FIT' }, { time: '13:30', service: 'Body Comp + Aerobic FIT' }, { time: '14:00', service: 'Aerobic FIT' }],
   [{ time: '11:00', service: 'Muscle FIT' }, { time: '11:00', service: 'Body Comp FIT' }, { time: '13:00', service: 'Aerobic FIT' }],
   [{ time: '09:30', service: 'Body Comp + Aerobic FIT' }, { time: '12:00', service: 'Body Comp FIT' }, { time: '14:30', service: 'Muscle FIT' }],
-  [{ time: '07:30', service: 'Body Comp FIT' }, { time: '13:30', service: 'Aerobic FIT' }, { time: '15:00', service: 'Body Comp FIT' }],
+  [{ time: '07:30', service: 'RMR + Body Comp FIT' }, { time: '09:00', service: 'Body Comp + Lactate FIT' }, { time: '13:30', service: 'Aerobic FIT' }, { time: '15:00', service: 'Body Comp FIT' }],
 ];
 
 const days = [];

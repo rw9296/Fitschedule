@@ -25,6 +25,7 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | --- | --- | --- |
 | Body Comp + Aerobic FIT | 2 hours | Combination, not a Full Slate service (see Booking rules). No eating or caffeine 4 hours before. No vigorous exercise the day before. |
 | Body Comp + Aerobic FIT with Lactate | 2½ hours | Combination, not a Full Slate service. DXA first. No vigorous exercise 24 hours before; no food or caffeine 4 hours before; exercise clothes. |
+| Body Comp + Lactate FIT | 90 min | Combination, not a Full Slate service. DXA first. Same prep as Lactate FIT. |
 | Aerobic FIT | 90 min | VO₂ max test. No eating or caffeine 4 hours before. No vigorous exercise the day before. |
 | Body Comp FIT | 60 min | DXA scan. No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
@@ -68,7 +69,8 @@ The sync applies these when working out openings from the staff schedule.
     part. Rachel uses this when Xavier and Sammy are busy at the start time.
   - So an opening exists if one qualified person is free for the whole block, OR Rachel is free for
     the DXA part and Xavier or Sammy is free for the aerobic part (plus the metabolic cart).
-  - Unconfirmed: how many minutes of the shortened block are the DXA part vs the aerobic part.
+  - The DXA part takes 30–45 minutes, then the handoff. To be safe, the split option needs Rachel
+    free for the first 45 minutes and Xavier or Sammy free from 30 minutes in until the end.
 - **RMR + Body Comp FIT** is a 2-hour combination (90 + 60 − 30), not a Full Slate service. Rachel
   Watson does all of it. RMR first, then DXA.
 - **RMR is Rachel Watson only.** No one else performs RMR, so RMR and RMR + Body Comp FIT openings
@@ -93,12 +95,12 @@ to be filled in.
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
 | Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
-| Xavier Cantu | purple | Aerobic FIT, Aerobic FIT with Lactate, Lactate FIT (rest TBD) | Takes over the aerobic part of a combo after Rachel's DXA |
+| Xavier Cantu | purple | Everything except RMR (all single services and combinations) | Takes over the aerobic part of a combo after Rachel's DXA |
 | Angeles Villarreal | teal | TBD | |
 | Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
 | Jenna Schmitz | beige | TBD | |
 | Lidia Gutierrez | gray | TBD | |
-| Sammy Reyes | green | Aerobic FIT, Aerobic FIT with Lactate, Lactate FIT (rest TBD) | Takes over the aerobic part of a combo after Rachel's DXA |
+| Sammy Reyes | green | Everything except RMR (all single services and combinations) | Takes over the aerobic part of a combo after Rachel's DXA |
 | Ellen Tally | red / salmon | TBD | |
 | Brittney Fernandez | orange | TBD | Spelled "Brittney", unlike Brittany Crim |
 | Jacob Soriano | blue | TBD | Same-looking blue as Brittany Crim |
@@ -110,6 +112,8 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Filter buttons split into Single and Combined groups; added "Body Comp + Lactate FIT" (90 min).
+  Why: 12 buttons were too many to scan in one list.
 - **2026-11-08:** Added "Body Comp + Aerobic FIT with Lactate" (2½ hours) to the site. Why: offered, DXA first.
 - **2026-11-08:** Added "RMR + Body Comp FIT" (2 hours, 7:30–9 AM starts) to the site. Why: offered together, all by Rachel.
 - **2026-11-08:** Site shows 🤘 before service names (filters, details card, time buttons); texts and

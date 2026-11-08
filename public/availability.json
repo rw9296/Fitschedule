@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T15:59:12",
+  "updated": "2026-11-08T16:09:36",
   "timezone": "America/Chicago",
   "days_ahead": 14,
   "source": "sample_data",
@@ -43,7 +43,11 @@
       "slots": [
         {
           "time": "07:30",
-          "service": "Body Comp FIT"
+          "service": "RMR + Body Comp FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Body Comp + Lactate FIT"
         },
         {
           "time": "13:30",
@@ -153,7 +157,11 @@
       "slots": [
         {
           "time": "07:30",
-          "service": "Body Comp FIT"
+          "service": "RMR + Body Comp FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Body Comp + Lactate FIT"
         },
         {
           "time": "13:30",
