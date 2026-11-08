@@ -25,7 +25,13 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | DXA only | 60 min | No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
+| Lactate only | 60 min | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
 | RMR | 90 min | Starts 7:30–9 AM. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
+
+Lactate only is the "lactate threshold only" test ($85) on
+https://sites.edb.utexas.edu/fit/aerobic-fit-with-lactate/. That page also offers VO₂ max plus
+lactate ("Aerobic FIT with Lactate", about 2 hours, $150); unconfirmed whether that's booked as its own
+service. The Full Slate name for Lactate only is pending (owner is adding it).
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
@@ -71,6 +77,7 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Added "Lactate only" (60 min) as a service. Why: clients can book lactate threshold without VO₂.
 - **2026-11-08:** Openings for RMR, VO₂ and lactate tests require the one metabolic cart to be free.
   Why: there's only one cart.
 - **2026-11-08:** RMR shows only 7:30–9:00 AM starts; 9:30 is by request. Why: owner's rule.

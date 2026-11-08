@@ -8,7 +8,7 @@ Work one phase at a time. Do not start a phase until the previous one is verifie
 - FULLSLATE_SCHEDULE_URL: https://app.fullslate.com/schedule (logged-in staff schedule)
 - BOOKING_PHONE: +15127030780 (shown as 512-703-0780)
 - BUSINESS_NAME: Fitness Institute of Texas · UT Austin
-- SERVICES_TO_SHOW: DXA + VO₂, VO₂ only, DXA only, Bone Density FIT, Muscle FIT, RMR
+- SERVICES_TO_SHOW: DXA + VO₂, VO₂ only, DXA only, Bone Density FIT, Muscle FIT, Lactate only, RMR
   (confirm these match the names in Full Slate exactly during Phase 2)
 - DAYS_AHEAD: 14
 - TIMEZONE: America/Chicago
