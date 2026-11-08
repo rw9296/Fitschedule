@@ -45,3 +45,31 @@ sync, so an older sample file fails until you run `npm run sample` again.
 
 The fonts (Barlow Condensed, Source Sans 3) are self-hosted in `public/fonts/` under the SIL Open
 Font License, so the page makes no requests to other sites.
+
+## Run the sync by hand (Phase 2)
+
+This runs on the Mac where Chrome is logged in to Full Slate, not in the cloud.
+
+One-time setup:
+
+```bash
+git clone https://github.com/rw9296/fitschedule.git ~/fitschedule
+```
+
+```bash
+cd ~/fitschedule && npm install
+```
+
+Also install the Claude in Chrome extension in that Chrome and sign in.
+
+Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say `/sync-availability`.
+
+- **First run (discovery):** while `PUBLIC_BOOKING_URL` in
+  `.claude/skills/sync-availability/SKILL.md` is `TBD`, the skill only looks around Full Slate,
+  writes what it found to `logs/discovery-*.md`, and recommends a source. Fill in the URL and the
+  "Reading the source" notes, then commit.
+- **After that:** each run reads the openings, builds the file with
+  `scripts/write-availability.js`, validates it, and commits and pushes only
+  `public/availability.json`.
+- **Failures:** if validation fails or the slot count drops more than 60%, nothing is committed
+  and a note goes to `logs/` (not committed).

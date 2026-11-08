@@ -236,6 +236,12 @@ The owner would rather have 3 hour old data than wrong data.
 
 ### Add to the repo
 
+- `scripts/write-availability.js`: takes a flat list of slots read off Full Slate, stamps
+  `updated`, sorts, groups, and refuses to write if the count fell more than 60% vs the last
+  committed file. The skill uses it so the model never hand-writes timestamps or ordering.
+- The skill starts with a one-time read-only **discovery run** to find the public booking page and
+  record how to read it, because the staff schedule (app.fullslate.com/schedule) shows booked
+  appointments, not open start times.
 - `logs/.gitkeep` and add `logs/*.md` to .gitignore (logs stay local, they are for debugging on the Mac)
 - Update README.md with "how to run the sync by hand": open Claude Code in this folder and say
   `/sync-availability`

@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 .env
 .env.*
+
+# Sync logs stay local on the Mac
+logs/*.md
