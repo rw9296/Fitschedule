@@ -1,0 +1,150 @@
+{
+  "updated": "2026-11-08T15:23:28",
+  "timezone": "America/Chicago",
+  "days_ahead": 14,
+  "source": "sample_data",
+  "days": [
+    {
+      "date": "2026-11-09",
+      "slots": [
+        {
+          "time": "10:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "14:30",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "slots": [
+        {
+          "time": "08:00",
+          "service": "Follow Up"
+        },
+        {
+          "time": "12:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "17:30",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "slots": [
+        {
+          "time": "13:00",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "slots": [
+        {
+          "time": "09:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "11:30",
+          "service": "Follow Up"
+        },
+        {
+          "time": "15:00",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "slots": [
+        {
+          "time": "08:00",
+          "service": "Follow Up"
+        },
+        {
+          "time": "12:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "17:30",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "slots": [
+        {
+          "time": "09:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "11:30",
+          "service": "Follow Up"
+        },
+        {
+          "time": "15:00",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "slots": [
+        {
+          "time": "10:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "14:30",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "slots": [
+        {
+          "time": "13:00",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "slots": [
+        {
+          "time": "09:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "11:30",
+          "service": "Follow Up"
+        },
+        {
+          "time": "15:00",
+          "service": "Follow Up"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "slots": [
+        {
+          "time": "10:00",
+          "service": "Initial Consultation"
+        },
+        {
+          "time": "14:30",
+          "service": "Follow Up"
+        }
+      ]
+    }
+  ]
+}

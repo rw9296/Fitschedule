@@ -1,0 +1,12 @@
+{
+  "name": "availability-site",
+  "private": true,
+  "scripts": {
+    "start": "serve public -l ${PORT:-3000} --no-clipboard",
+    "validate": "node scripts/validate.js",
+    "sample": "node scripts/sample.js"
+  },
+  "dependencies": {
+    "serve": "^14"
+  }
+}

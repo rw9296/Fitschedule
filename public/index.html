@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="format-detection" content="telephone=no">
+<title>Open times</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #f4f5f7;
+    --text: #15171a;
+    --muted: #555b65;
+    --accent: #1f6f5c;
+    --accent-text: #ffffff;
+    --accent-soft: #e6f2ee;
+    --border: #d9dde3;
+    --warn-bg: #fff4d6;
+    --warn-text: #5c4300;
+    --warn-border: #f0d48a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121416;
+      --surface: #1c1f23;
+      --text: #f2f4f6;
+      --muted: #a9b0ba;
+      --accent: #4fbf9f;
+      --accent-text: #0b1a15;
+      --accent-soft: #17302a;
+      --border: #30353c;
+      --warn-bg: #3a2f10;
+      --warn-text: #ffe2a0;
+      --warn-border: #6b5520;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+  main {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 28px 16px 40px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+  .lead { margin: 0 0 4px; font-size: 1.05rem; }
+  .updated { margin: 0; color: var(--muted); font-size: 0.9rem; }
+  .stale {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: var(--warn-bg);
+    color: var(--warn-text);
+    border: 1px solid var(--warn-border);
+    font-size: 0.95rem;
+  }
+  .day { margin-top: 28px; }
+  .day h2 {
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+  }
+  .slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .slot, .btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 56px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--text);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .slot:active, .btn:active { background: var(--accent); color: var(--accent-text); }
+  .slot:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .slot .time { font-size: 1.15rem; font-weight: 650; }
+  .slot .service { font-size: 0.88rem; color: var(--muted); }
+  .slot:active .service { color: inherit; }
+  .btn {
+    align-items: center;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 48px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn.secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .notice {
+    margin-top: 28px;
+    padding: 18px 16px;
+    border-radius: 12px;
+    background: var(--surface);
+  }
+  .notice p { margin: 0 0 14px; }
+  footer {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  footer p { margin: 0 0 6px; }
+  footer .phone { color: var(--text); font-size: 1.05rem; font-weight: 600; user-select: all; }
+  .loading { margin-top: 28px; color: var(--muted); }
+
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-backdrop[hidden] { display: none; }
+  .modal {
+    width: 100%;
+    max-width: 420px;
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 14px;
+    padding: 20px 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+  .modal h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .modal p { margin: 0 0 12px; font-size: 0.95rem; color: var(--muted); }
+  .modal .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 12px 0 4px; }
+  .modal .copybox {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.98rem;
+    user-select: all;
+    word-break: break-word;
+  }
+  .modal .actions { display: flex; gap: 10px; margin-top: 18px; }
+  .modal .actions .btn { flex: 1; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1 id="business"></h1>
+    <p class="lead">Tap a time to text me and claim it</p>
+    <p class="updated" id="updated"></p>
+    <div class="stale" id="stale" hidden>This list may be out of date. Text to confirm before planning around a time.</div>
+  </header>
+
+  <section id="list" aria-live="polite">
+    <p class="loading">Loading open times…</p>
+  </section>
+
+  <footer>
+    <p class="phone" id="phone"></p>
+    <p>First come first served. Your spot is held once I text you back.</p>
+  </footer>
+</main>
+
+<div class="modal-backdrop" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <h3 id="modal-title">Send this as a text</h3>
+    <p>Your browser can't open text messages. Copy the message and text it from your phone.</p>
+    <div class="label">Text to</div>
+    <div class="copybox" id="modal-phone"></div>
+    <div class="label">Message</div>
+    <div class="copybox" id="modal-body"></div>
+    <div class="actions">
+      <button type="button" class="btn" id="modal-copy">Copy message</button>
+      <button type="button" class="btn secondary" id="modal-close">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---- CONFIG: keep in sync with "Fill these in" in PLAN.md ----
+  var BUSINESS_NAME = 'Your Business Name';  // TODO: fill in
+  var BOOKING_PHONE = '+15555550100';        // TODO: fill in, E.164 (+1 and 10 digits)
+  var STALE_AFTER_HOURS = 2;
+  // --------------------------------------------------------------
+
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var IS_APPLE = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  document.title = BUSINESS_NAME + ' · Open times';
+  $('business').textContent = BUSINESS_NAME;
+  $('phone').textContent = formatPhone(BOOKING_PHONE);
+
+  // All dates and times are wall-clock values in the business timezone.
+  // We never convert them; we only parse the numbers and format them.
+  function parseDate(s) {
+    var p = s.split('-');
+    return { y: +p[0], m: +p[1], d: +p[2] };
+  }
+  function weekday(dt) {
+    return new Date(Date.UTC(dt.y, dt.m - 1, dt.d)).getUTCDay();
+  }
+  function fmtTime(hhmm) {
+    var p = hhmm.split(':');
+    var h = +p[0];
+    var ampm = h < 12 ? 'AM' : 'PM';
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + ':' + p[1] + ' ' + ampm;
+  }
+  function dayHeader(dateStr) {   // "Monday, Nov 10"
+    var dt = parseDate(dateStr);
+    return DAYS[weekday(dt)] + ', ' + MONTHS[dt.m - 1] + ' ' + dt.d;
+  }
+  function dayForText(dateStr) {  // "Monday Nov 10"
+    var dt = parseDate(dateStr);
+    return DAYS[weekday(dt)] + ' ' + MONTHS[dt.m - 1] + ' ' + dt.d;
+  }
+  function formatPhone(e164) {
+    var m = /^\+1(\d{3})(\d{3})(\d{4})$/.exec(e164);
+    return m ? '(' + m[1] + ') ' + m[2] + '-' + m[3] : e164;
+  }
+
+  function smsHref(body) {
+    var sep = IS_APPLE ? '&' : '?';
+    return 'sms:' + BOOKING_PHONE + sep + 'body=' + encodeURIComponent(body);
+  }
+
+  // Current wall-clock time in the business timezone, as a comparable number.
+  function nowWallMs(tz) {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+      }).formatToParts(new Date());
+      var g = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return +parts[i].value; };
+      return Date.UTC(g('year'), g('month') - 1, g('day'), g('hour') % 24, g('minute'), g('second'));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function renderUpdated(data) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(data.updated || '');
+    if (!m) return;
+    var dt = { y: +m[1], m: +m[2], d: +m[3] };
+    $('updated').textContent = 'Last updated ' + fmtTime(m[4] + ':' + m[5]) + ', ' +
+      DAYS[weekday(dt)].slice(0, 3) + ' ' + MONTHS[dt.m - 1] + ' ' + dt.d;
+
+    var updatedMs = Date.UTC(dt.y, dt.m - 1, dt.d, +m[4], +m[5]);
+    var nowMs = nowWallMs(data.timezone || 'America/Chicago');
+    if (nowMs !== null && nowMs - updatedMs > STALE_AFTER_HOURS * 3600000) {
+      $('stale').hidden = false;
+    }
+  }
+
+  function slotLink(date, slot) {
+    var body = "Hi! I'd like to book " + dayForText(date) + ' at ' + fmtTime(slot.time) +
+      (slot.service ? ' for ' + slot.service : '') + '.';
+    var a = document.createElement('a');
+    a.className = 'slot';
+    a.href = smsHref(body);
+    a.setAttribute('data-body', body);
+    var t = document.createElement('span');
+    t.className = 'time';
+    t.textContent = fmtTime(slot.time);
+    a.appendChild(t);
+    if (slot.service) {
+      var s = document.createElement('span');
+      s.className = 'service';
+      s.textContent = slot.service;
+      a.appendChild(s);
+    }
+    return a;
+  }
+
+  function renderNotice(message) {
+    var box = document.createElement('div');
+    box.className = 'notice';
+    var p = document.createElement('p');
+    p.textContent = message;
+    var a = document.createElement('a');
+    a.className = 'btn';
+    var body = 'Hi! Do you have any openings coming up?';
+    a.href = smsHref(body);
+    a.setAttribute('data-body', body);
+    a.textContent = 'Text me';
+    box.appendChild(p);
+    box.appendChild(a);
+    return box;
+  }
+
+  function render(data) {
+    var list = $('list');
+    list.textContent = '';
+    renderUpdated(data);
+    var days = (data.days || []).filter(function (d) { return d.slots && d.slots.length; });
+    if (!days.length) {
+      list.appendChild(renderNotice("Nothing open in the next two weeks. Text me and I'll find something."));
+      return;
+    }
+    days.forEach(function (day) {
+      var sec = document.createElement('section');
+      sec.className = 'day';
+      var h = document.createElement('h2');
+      h.textContent = dayHeader(day.date);
+      var grid = document.createElement('div');
+      grid.className = 'slots';
+      day.slots.forEach(function (slot) { grid.appendChild(slotLink(day.date, slot)); });
+      sec.appendChild(h);
+      sec.appendChild(grid);
+      list.appendChild(sec);
+    });
+  }
+
+  fetch('availability.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(render)
+    .catch(function () {
+      var list = $('list');
+      list.textContent = '';
+      list.appendChild(renderNotice("Couldn't load open times right now. Text me and I'll find something."));
+    });
+
+  // ---- Desktop fallback ----
+  // If tapping an sms: link doesn't hand off to another app (page never loses
+  // focus or visibility), the browser can't send texts: show the copy modal.
+  var pending = null;
+  function cancelPending() { if (pending) { clearTimeout(pending); pending = null; } }
+  window.addEventListener('blur', cancelPending);
+  window.addEventListener('pagehide', cancelPending);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) cancelPending(); });
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-body]');
+    if (!a) return;
+    var body = a.getAttribute('data-body');
+    cancelPending();
+    pending = setTimeout(function () {
+      pending = null;
+      if (!document.hidden && document.hasFocus()) openModal(body);
+    }, 1200);
+  });
+
+  var lastFocus = null;
+  function openModal(body) {
+    lastFocus = document.activeElement;
+    $('modal-phone').textContent = formatPhone(BOOKING_PHONE) + '  (' + BOOKING_PHONE + ')';
+    $('modal-body').textContent = body;
+    $('modal-copy').textContent = 'Copy message';
+    $('modal').hidden = false;
+    $('modal-copy').focus();
+  }
+  function closeModal() {
+    $('modal').hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('modal-close').addEventListener('click', closeModal);
+  $('modal').addEventListener('click', function (e) { if (e.target === $('modal')) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('modal').hidden) closeModal(); });
+  $('modal-copy').addEventListener('click', function () {
+    var text = $('modal-body').textContent;
+    var done = function () { $('modal-copy').textContent = 'Copied'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { selectText($('modal-body')); });
+    } else {
+      selectText($('modal-body'));
+    }
+  });
+  function selectText(el) {
+    var r = document.createRange();
+    r.selectNodeContents(el);
+    var s = window.getSelection();
+    s.removeAllRanges();
+    s.addRange(r);
+  }
+})();
+</script>
+</body>
+</html>
