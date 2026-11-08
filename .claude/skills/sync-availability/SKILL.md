@@ -13,7 +13,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - DASHBOARD_URL: https://app.fullslate.com/schedule (logged in, in the owner's Chrome)
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
-  Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR (may appear as "Calorie FIT")
+  Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR + Body Comp FIT (combination) · RMR (may appear as "Calorie FIT")
 - DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
 - Full Slate service names all start with 🤘. Ignore it when matching names, and
   never put it in availability.json.

@@ -27,6 +27,7 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
 | Aerobic FIT with Lactate | 2 hours | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
 | Lactate FIT | 60 min | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
+| RMR + Body Comp FIT | 2 hours | Combination, not a Full Slate service. Starts 7:30–9 AM. Same prep as RMR. |
 | RMR | 90 min | Starts 7:30–9 AM. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
 
 Lactate FIT (its name in Full Slate too) is the "lactate threshold only" test ($85) on
@@ -52,9 +53,16 @@ The sync applies these when working out openings from the staff schedule.
   assessment together, the total appointment is shortened by 30 minutes. Examples:
   Body Comp FIT (60) + Aerobic FIT (90) = 2 hours; Aerobic FIT (90) + Lactate FIT (60) = 2 hours,
   which is the "Aerobic FIT with Lactate" service.
+- **Body Comp (DXA) always comes first** when combined with Aerobic FIT or Aerobic FIT with Lactate.
 - **Body Comp + Aerobic FIT** (once labeled "DXA + VO₂") is not a Full Slate service. In Full Slate
-  it's Body Comp FIT and Aerobic FIT booked together. Unconfirmed: whether one person does both
-  parts, which part comes first, and how long the metabolic cart is in use within the 2 hours.
+  it's Body Comp FIT then Aerobic FIT. Unconfirmed: whether one person does both parts or they can
+  be split between staff, and how long the metabolic cart is in use within the 2 hours.
+- **Body Comp + Aerobic FIT with Lactate** happens (DXA first; 60 + 120 − 30 = 2½ hours by the
+  combined rule). Not listed on the site yet; length unconfirmed.
+- **RMR + Body Comp FIT** is a 2-hour combination (90 + 60 − 30), not a Full Slate service. Rachel
+  Watson does all of it. RMR first is assumed (RMR must start 7:30–9 AM and needs fasting); unconfirmed.
+- **RMR is Rachel Watson only.** No one else performs RMR, so RMR and RMR + Body Comp FIT openings
+  require Rachel to be free for the whole appointment.
 
 - **RMR start times:** 7:30 AM to 9:00 AM only. A 9:30 AM start is sometimes possible, depending
   on the client's wake-up time. The site doesn't list it; clients can text to ask.
@@ -74,7 +82,7 @@ to be filled in.
 
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
-| Rachel Watson | pink / lilac | RMR, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
+| Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
 | Xavier Cantu | purple | TBD | |
 | Angeles Villarreal | teal | TBD | |
 | Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
@@ -92,6 +100,7 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Added "RMR + Body Comp FIT" (2 hours, 7:30–9 AM starts) to the site. Why: offered together, all by Rachel.
 - **2026-11-08:** Site shows 🤘 before service names (filters, details card, time buttons); texts and
   availability.json stay plain. Why: owner's request, matches Full Slate's 🤘 prefix.
 - **2026-11-08:** The sync ignores the longhorn prefix on Full Slate service names when matching.
