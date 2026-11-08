@@ -23,6 +23,12 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | DXA only | 60 min | No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
+| RMR | 90 min | Early morning only. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
+
+RMR is called "Calorie FIT (RMR)" on the FIT website (details from
+https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
+cart. Unconfirmed: whether that's the same cart as VO₂ testing, which would mean RMR and VO₂
+can't run at the same time.
 
 ## Staff
 
@@ -32,7 +38,7 @@ to be filled in.
 
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
-| Rachel Watson | pink / lilac | TBD | Owner; signs off the site |
+| Rachel Watson | pink / lilac | RMR, DXA only, Bone Density FIT, Muscle FIT | Owner; signs off the site. Not VO₂, so not DXA + VO₂ unless the combo can be split between staff (unconfirmed) |
 | Xavier Cantu | purple | TBD | |
 | Angeles Villarreal | teal | TBD | |
 | Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
@@ -50,6 +56,7 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Added RMR as a sixth service, labeled "RMR" on the site. Why: Rachel performs it; it was missing.
 - **2026-11-08:** Openings come from the Full Slate staff schedule, not a public booking page.
   Why: owner's instruction; staff availability always comes from Full Slate.
 - **2026-11-08:** The sync's first run is a read-only discovery run. Why: the staff schedule shows

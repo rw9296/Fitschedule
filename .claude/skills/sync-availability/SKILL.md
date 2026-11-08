@@ -12,7 +12,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - PUBLIC_BOOKING_URL: `TBD` (fill in after the discovery run, e.g. https://SOMETHING.fullslate.com)
 - DASHBOARD_URL: https://app.fullslate.com/schedule (logged in, in the owner's Chrome)
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
-  DXA + VO₂ · VO₂ only · DXA only · Bone Density FIT · Muscle FIT
+  DXA + VO₂ · VO₂ only · DXA only · Bone Density FIT · Muscle FIT · RMR (may appear as "Calorie FIT")
 - DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
 
 ## Mode
