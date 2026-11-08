@@ -179,6 +179,7 @@
   var BOOKING_PHONE = '+15127030780';   // E.164
   var SIGNOFF = "Hook 'em! — Rachel";
   var STALE_AFTER_HOURS = 2;
+  var SERVICE_PREFIX = '🤘 ';   // shown before service names on the page, not in texts or data
 
   // Optional announcement. Set to '' to hide. HTML allowed (it's ours, not from the data).
   var NEWS_HTML = '<strong>New:</strong> <a href="https://sites.edb.utexas.edu/fit/dxa-bone-density-fit/" target="_blank" rel="noopener">Bone Density FIT</a> and <a href="https://sites.edb.utexas.edu/fit/muscle-fit/" target="_blank" rel="noopener">Muscle FIT</a> appointments. Bone Density FIT can be added to your regular DXA for just 5 extra minutes.';
@@ -224,6 +225,7 @@
     var m = /^\+1(\d{3})(\d{3})(\d{4})$/.exec(e164);
     return m ? m[1] + '-' + m[2] + '-' + m[3] : e164;
   }
+  function label(name) { return SERVICE_PREFIX + name; }
   function norm(s) { return String(s || '').toLowerCase().replace(/₂/g, '2').replace(/[^a-z0-9+]/g, ''); }
   function serviceInfo(name) {
     var k = norm(name);
@@ -289,7 +291,7 @@
     nav.textContent = '';
     if (names.length < 2) { nav.hidden = true; return; }
     ['all'].concat(names).forEach(function (n) {
-      var b = el('button', null, n === 'all' ? 'All' : n);
+      var b = el('button', null, n === 'all' ? 'All' : label(n));
       b.type = 'button';
       b.setAttribute('data-id', n);
       b.setAttribute('aria-pressed', String(n === filter));
@@ -303,7 +305,7 @@
     box.textContent = '';
     if (filter === 'all') { box.hidden = true; return; }
     var info = serviceInfo(filter) || { name: filter };
-    box.appendChild(el('h2', null, info.name));
+    box.appendChild(el('h2', null, label(info.name)));
     if (info.dur) box.appendChild(el('span', 'dur', info.dur));
     if (info.prep) box.appendChild(el('p', null, info.prep));
     if (!count) {
@@ -323,7 +325,8 @@
     a.appendChild(el('span', 'time', fmtTime(slot.time)));
     if (slot.service && filter === 'all') {
       var info = serviceInfo(slot.service);
-      a.appendChild(el('span', 'svc', slot.service + (info && info.dur ? ' · ' + info.dur : '')));
+      a.appendChild(el('span', 'svc', label(slot.service)));
+      if (info && info.dur) a.appendChild(el('span', 'svc', info.dur));
     }
     return a;
   }
