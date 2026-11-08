@@ -52,7 +52,6 @@ Newest first. One line each: date, decision, why.
 
 - **2026-11-08:** Openings come from the Full Slate staff schedule, not a public booking page.
   Why: owner's instruction; staff availability always comes from Full Slate.
-
 - **2026-11-08:** The sync's first run is a read-only discovery run. Why: the staff schedule shows
   booked appointments, not open start times, and inferring gaps risks showing times that aren't open.
 - **2026-11-08:** Slots are written by `scripts/write-availability.js`, which also blocks a >60% drop.
