@@ -14,6 +14,9 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   DXA + VO₂ · VO₂ only · DXA only · Bone Density FIT · Muscle FIT · RMR (may appear as "Calorie FIT")
 - DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
+- Business rules: read CONTEXT.md first. Its Staff, Booking rules and Equipment sections say who
+  can perform each service, allowed start times, and shared equipment (for example, only one
+  metabolic cart). A time is open only if every one of those rules is met.
 
 ## Mode
 

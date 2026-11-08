@@ -6,7 +6,9 @@ this file records what we've learned and decided since. Keep it current (see CLA
 ## Business
 
 - **Name:** Fitness Institute of Texas (FIT), UT Austin. Website: https://sites.edb.utexas.edu/fit/
-- **Booking:** clients text 512-703-0780 (`+15127030780`). Staff confirm by text and book by hand in Full Slate.
+- **Texting number:** 512-703-0780 (`+15127030780`). Used everywhere on this site. Staff confirm by
+  text and book by hand in Full Slate.
+- **Calling number:** 512-471-0081. This is the number on the FIT website. Not shown on this site.
 - **Sign-off on the site:** "Hook 'em! — Rachel"
 - **Timezone:** America/Chicago
 - **Full Slate:** staff schedule at https://app.fullslate.com/schedule (logged in on the owner's Mac).
@@ -23,12 +25,25 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | DXA only | 60 min | No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
-| RMR | 90 min | Early morning only. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
+| RMR | 90 min | Starts 7:30–9 AM. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
-cart. Unconfirmed: whether that's the same cart as VO₂ testing, which would mean RMR and VO₂
-can't run at the same time.
+cart (see Equipment).
+
+## Booking rules
+
+The sync applies these when working out openings from the staff schedule.
+
+- **RMR start times:** 7:30 AM to 9:00 AM only. A 9:30 AM start is sometimes possible, depending
+  on the client's wake-up time. The site doesn't list it; clients can text to ask.
+
+## Equipment
+
+- **Metabolic cart: only one.** RMR, VO₂ testing (VO₂ only and the VO₂ part of DXA + VO₂) and
+  lactate testing all use it, so no two of them can overlap. One opening for each means the cart
+  is free for that service's whole length, not just that a qualified staff member is free.
+- **DXA scanners:** number unconfirmed.
 
 ## Staff
 
@@ -56,6 +71,9 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Openings for RMR, VO₂ and lactate tests require the one metabolic cart to be free.
+  Why: there's only one cart.
+- **2026-11-08:** RMR shows only 7:30–9:00 AM starts; 9:30 is by request. Why: owner's rule.
 - **2026-11-08:** Added RMR as a sixth service, labeled "RMR" on the site. Why: Rachel performs it; it was missing.
 - **2026-11-08:** Openings come from the Full Slate staff schedule, not a public booking page.
   Why: owner's instruction; staff availability always comes from Full Slate.
