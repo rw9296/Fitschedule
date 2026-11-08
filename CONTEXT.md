@@ -16,6 +16,9 @@ this file records what we've learned and decided since. Keep it current (see CLA
 
 ## Services
 
+**Same thing, different names:** DXA = Body Comp FIT. VO₂ / VO₂ max = Aerobic FIT. Calorie FIT = RMR.
+Bone Density FIT is a separate service (it also uses the DXA scanner).
+
 Names as shown on the site. Confirm Full Slate's exact spelling during the discovery run.
 
 | Service | Length | Prep shown to clients |
