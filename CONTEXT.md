@@ -28,10 +28,10 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | Lactate FIT | 60 min | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
 | RMR | 90 min | Starts 7:30–9 AM. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
 
-Lactate FIT is the "lactate threshold only" test ($85) on
+Lactate FIT (its name in Full Slate too) is the "lactate threshold only" test ($85) on
 https://sites.edb.utexas.edu/fit/aerobic-fit-with-lactate/. That page also offers VO₂ max plus
-lactate ("Aerobic FIT with Lactate", about 2 hours, $150); unconfirmed whether that's booked as its own
-service. Named "Lactate FIT" in Full Slate.
+lactate ("Aerobic FIT with Lactate", about 2 hours, $150). Unconfirmed: whether that combo is
+booked as its own service.
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
