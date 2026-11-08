@@ -85,10 +85,11 @@ The sync applies these when working out openings from the staff schedule.
   Body Comp + Aerobic FIT), Lactate FIT and Aerobic FIT with Lactate all use it, so no two of them can overlap. One opening for each means the cart
   is free for that service's whole length, not just that a qualified staff member is free.
 - **DXA scanner: only one.** Used by Body Comp FIT, Bone Density FIT and every combination with
-  Body Comp. At most two DXA appointments may overlap (the scan itself is 8–12 minutes, so two can
-  share it). Never three at once: if two of Rachel, Xavier and Sammy already have a DXA appointment
-  at a time, the third can't be offered one then. Unconfirmed: whether the limit is about
-  overlapping appointments or only the same start time; the sync uses overlapping, which is safer.
+  Body Comp. Up to two DXA appointments may run at once, including starting at the same time:
+  the scan is 8–12 minutes, so one client talks with staff for 7–10 minutes while the other is
+  scanned (and clients often arrive 5–10 minutes early or late anyway). Never three at once: if
+  two of Rachel, Xavier and Sammy already have a DXA appointment overlapping a time, the third
+  can't be offered one then.
 - **Only Rachel, Xavier and Sammy use either machine.** Other staff never block the equipment.
 
 ## Staff
