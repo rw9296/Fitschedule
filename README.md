@@ -6,7 +6,8 @@ text, not a call. Staff reply to confirm and book it by hand in Full Slate.
 
 There is no backend, API or database. `public/availability.json` is the only data, and it's
 refreshed by committing a new copy. GitHub Pages redeploys on every push to `main`. See
-[PLAN.md](PLAN.md) for the full design and phases.
+[PLAN.md](PLAN.md) for the full design and phases, and [CONTEXT.md](CONTEXT.md) for business
+facts (services, staff) and the log of decisions made since.
 
 ## Config
 
