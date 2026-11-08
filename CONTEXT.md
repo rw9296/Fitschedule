@@ -20,9 +20,9 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 
 | Service | Length | Prep shown to clients |
 | --- | --- | --- |
-| DXA + VO₂ | 2 hours | No eating or caffeine 4 hours before. No vigorous exercise the day before. |
-| Aerobic FIT | 90 min | No eating or caffeine 4 hours before. No vigorous exercise the day before. |
-| DXA only | 60 min | No eating or exercise 3 hours before. |
+| Body Comp + Aerobic FIT | 2 hours | Combination, not a Full Slate service (see Booking rules). No eating or caffeine 4 hours before. No vigorous exercise the day before. |
+| Aerobic FIT | 90 min | VO₂ max test. No eating or caffeine 4 hours before. No vigorous exercise the day before. |
+| Body Comp FIT | 60 min | DXA scan. No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
 | Aerobic FIT with Lactate | 2 hours | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
@@ -33,9 +33,9 @@ Lactate FIT (its name in Full Slate too) is the "lactate threshold only" test ($
 https://sites.edb.utexas.edu/fit/aerobic-fit-with-lactate/. That page also offers VO₂ max plus
 lactate ("Aerobic FIT with Lactate", 2 hours, $150), which is booked as its own service.
 
-Full Slate service names confirmed so far: Aerobic FIT (90 min; this is the VO₂ max test, once
-labeled "VO₂ only"), Lactate FIT (60 min), Aerobic FIT with Lactate (2 hours). Unconfirmed: the
-Full Slate names for DXA + VO₂, DXA only, Bone Density FIT and Muscle FIT.
+Full Slate service names confirmed so far: Body Comp FIT (the DXA scan, once labeled "DXA only"),
+Aerobic FIT (the VO₂ max test, once labeled "VO₂ only"), Lactate FIT, Aerobic FIT with Lactate.
+Unconfirmed: the Full Slate names for Bone Density FIT, Muscle FIT and RMR.
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
@@ -45,15 +45,23 @@ cart (see Equipment).
 
 The sync applies these when working out openings from the staff schedule.
 
+- **Combined bookings are 30 minutes shorter than the sum.** When a client books more than one
+  assessment together, the total appointment is shortened by 30 minutes. Examples:
+  Body Comp FIT (60) + Aerobic FIT (90) = 2 hours; Aerobic FIT (90) + Lactate FIT (60) = 2 hours,
+  which is the "Aerobic FIT with Lactate" service.
+- **Body Comp + Aerobic FIT** (once labeled "DXA + VO₂") is not a Full Slate service. In Full Slate
+  it's Body Comp FIT and Aerobic FIT booked together. Unconfirmed: whether one person does both
+  parts, which part comes first, and how long the metabolic cart is in use within the 2 hours.
+
 - **RMR start times:** 7:30 AM to 9:00 AM only. A 9:30 AM start is sometimes possible, depending
   on the client's wake-up time. The site doesn't list it; clients can text to ask.
 
 ## Equipment
 
-- **Metabolic cart: only one.** RMR, Aerobic FIT (the VO₂ test, also the VO₂ part of
-  DXA + VO₂), Lactate FIT and Aerobic FIT with Lactate all use it, so no two of them can overlap. One opening for each means the cart
+- **Metabolic cart: only one.** RMR, Aerobic FIT (also the Aerobic part of
+  Body Comp + Aerobic FIT), Lactate FIT and Aerobic FIT with Lactate all use it, so no two of them can overlap. One opening for each means the cart
   is free for that service's whole length, not just that a qualified staff member is free.
-- **DXA scanners:** number unconfirmed.
+- **DXA scanners:** number unconfirmed. Used by Body Comp FIT and Bone Density FIT.
 
 ## Staff
 
@@ -63,7 +71,7 @@ to be filled in.
 
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
-| Rachel Watson | pink / lilac | RMR, DXA only, Bone Density FIT, Muscle FIT | Owner; signs off the site. Not VO₂, so not DXA + VO₂ unless the combo can be split between staff (unconfirmed) |
+| Rachel Watson | pink / lilac | RMR, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
 | Xavier Cantu | purple | TBD | |
 | Angeles Villarreal | teal | TBD | |
 | Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
@@ -81,6 +89,8 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Renamed "DXA only" to "Body Comp FIT" and "DXA + VO₂" to "Body Comp + Aerobic FIT"; prep lines
+  mention DXA and VO₂ so clients still recognize them. Why: match Full Slate names.
 - **2026-11-08:** Renamed "VO₂ only" to "Aerobic FIT" on the site. Why: same service; matches Full Slate.
 - **2026-11-08:** Added "Aerobic FIT with Lactate" (2 hours) as a service. Why: booked separately in Full Slate.
 - **2026-11-08:** Added "Lactate FIT" (60 min) as a service, named to match Full Slate. Why: clients can book lactate threshold without VO₂.

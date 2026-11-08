@@ -10,7 +10,7 @@
 //   ... | node scripts/write-availability.js --source public_booking_page -
 //
 // Input: a JSON array like
-//   [{ "date": "2026-11-10", "time": "10:00", "service": "DXA only" }, ...]
+//   [{ "date": "2026-11-10", "time": "10:00", "service": "Body Comp FIT" }, ...]
 // Dates are YYYY-MM-DD and times are 24h HH:MM, both local America/Chicago.
 //
 // Flags:

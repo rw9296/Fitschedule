@@ -12,7 +12,8 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - PUBLIC_BOOKING_URL: `TBD` (fill in after the discovery run, e.g. https://SOMETHING.fullslate.com)
 - DASHBOARD_URL: https://app.fullslate.com/schedule (logged in, in the owner's Chrome)
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
-  DXA + VO₂ · Aerobic FIT · DXA only · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR (may appear as "Calorie FIT")
+  Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
+  Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR (may appear as "Calorie FIT")
 - DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
 - Business rules: read CONTEXT.md first. Its Staff, Booking rules and Equipment sections say who
   can perform each service, allowed start times, and shared equipment (for example, only one
@@ -56,7 +57,7 @@ Goal: find the most reliable page to read openings from and record how it works.
    (if you needed screenshots) or `dashboard_calendar`.
 4. Write the slots you read to a scratch file outside the repo (e.g. `$TMPDIR/slots.json`) as a
    flat JSON array, using the site's service names from SERVICES_TO_SHOW:
-   `[{"date":"2026-11-10","time":"13:30","service":"DXA only"}, ...]`
+   `[{"date":"2026-11-10","time":"13:30","service":"Body Comp FIT"}, ...]`
    Dates YYYY-MM-DD, times 24h HH:MM, local Central time exactly as Full Slate shows them.
    Include only times Full Slate actually lists as open. Never infer or fill in times.
 5. Build the file: `node scripts/write-availability.js --source <label> $TMPDIR/slots.json`
