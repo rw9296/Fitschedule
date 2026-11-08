@@ -26,15 +26,32 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 
 ## Staff
 
-Who can perform or book each service. (To be filled in.)
+Names exactly as they appear in Full Slate's Staff list, with their calendar color (from a
+screenshot of the schedule sidebar, 2026-11-08). The services each person can perform are still
+to be filled in.
 
-| Staff member | Services they can perform | Notes (days, hours, limits) |
-| --- | --- | --- |
-| | | |
+| Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
+| --- | --- | --- | --- |
+| Rachel Watson | pink / lilac | TBD | Owner; signs off the site |
+| Xavier Cantu | purple | TBD | |
+| Angeles Villarreal | teal | TBD | |
+| Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
+| Jenna Schmitz | beige | TBD | |
+| Lidia Gutierrez | gray | TBD | |
+| Sammy Reyes | green | TBD | |
+| Ellen Tally | red / salmon | TBD | |
+| Brittney Fernandez | orange | TBD | Spelled "Brittney", unlike Brittany Crim |
+| Jacob Soriano | blue | TBD | Same-looking blue as Brittany Crim |
+
+Reading tip for the sync: identify staff by name in the page text, not by color. Brittany Crim and
+Jacob Soriano share a near-identical blue, and the two first names are spelled differently.
 
 ## Decisions log
 
 Newest first. One line each: date, decision, why.
+
+- **2026-11-08:** Openings come from the Full Slate staff schedule, not a public booking page.
+  Why: owner's instruction; staff availability always comes from Full Slate.
 
 - **2026-11-08:** The sync's first run is a read-only discovery run. Why: the staff schedule shows
   booked appointments, not open start times, and inferring gaps risks showing times that aren't open.
