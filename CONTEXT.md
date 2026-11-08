@@ -25,13 +25,17 @@ Names as shown on the site. Confirm Full Slate's exact spelling during the disco
 | DXA only | 60 min | No eating or exercise 3 hours before. |
 | Bone Density FIT | 30 min | Can be added to a Total Body DXA for 5 extra minutes. No set slots; clients text any 30-minute time. |
 | Muscle FIT | 2½ hours | No vigorous exercise the day before. |
+| Aerobic FIT with Lactate | 2 hours | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
 | Lactate FIT | 60 min | No vigorous exercise for 24 hours before. No food or caffeine 4 hours before. Wear or bring exercise clothes. |
 | RMR | 90 min | Starts 7:30–9 AM. Fast overnight (water is fine). No vigorous exercise for 12 hours before; light activity that morning. |
 
 Lactate FIT (its name in Full Slate too) is the "lactate threshold only" test ($85) on
 https://sites.edb.utexas.edu/fit/aerobic-fit-with-lactate/. That page also offers VO₂ max plus
-lactate ("Aerobic FIT with Lactate", about 2 hours, $150). Unconfirmed: whether that combo is
-booked as its own service.
+lactate ("Aerobic FIT with Lactate", 2 hours, $150), which is booked as its own service.
+
+Full Slate service names confirmed so far: Aerobic FIT (90 min), Lactate FIT (60 min), Aerobic FIT
+with Lactate (2 hours). Unconfirmed: whether "VO₂ only" on the site is the same as Aerobic FIT
+(both 90 min), and the Full Slate names for DXA + VO₂, DXA only, Bone Density FIT and Muscle FIT.
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
@@ -46,8 +50,8 @@ The sync applies these when working out openings from the staff schedule.
 
 ## Equipment
 
-- **Metabolic cart: only one.** RMR, VO₂ testing (VO₂ only and the VO₂ part of DXA + VO₂) and
-  lactate testing all use it, so no two of them can overlap. One opening for each means the cart
+- **Metabolic cart: only one.** RMR, VO₂ testing (VO₂ only / Aerobic FIT and the VO₂ part of
+  DXA + VO₂), Lactate FIT and Aerobic FIT with Lactate all use it, so no two of them can overlap. One opening for each means the cart
   is free for that service's whole length, not just that a qualified staff member is free.
 - **DXA scanners:** number unconfirmed.
 
@@ -77,6 +81,7 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Added "Aerobic FIT with Lactate" (2 hours) as a service. Why: booked separately in Full Slate.
 - **2026-11-08:** Added "Lactate FIT" (60 min) as a service, named to match Full Slate. Why: clients can book lactate threshold without VO₂.
 - **2026-11-08:** Openings for RMR, VO₂ and lactate tests require the one metabolic cart to be free.
   Why: there's only one cart.
