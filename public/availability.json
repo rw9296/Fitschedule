@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T15:30:18",
+  "updated": "2026-11-08T15:57:04",
   "timezone": "America/Chicago",
   "days_ahead": 14,
   "source": "sample_data",
@@ -17,7 +17,7 @@
         },
         {
           "time": "13:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     },
@@ -47,7 +47,7 @@
         },
         {
           "time": "13:30",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         },
         {
           "time": "15:00",
@@ -72,7 +72,7 @@
         },
         {
           "time": "14:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     },
@@ -89,7 +89,7 @@
         },
         {
           "time": "13:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     },
@@ -110,7 +110,7 @@
         },
         {
           "time": "14:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     },
@@ -127,7 +127,7 @@
         },
         {
           "time": "13:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     },
@@ -157,7 +157,7 @@
         },
         {
           "time": "13:30",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         },
         {
           "time": "15:00",
@@ -182,7 +182,7 @@
         },
         {
           "time": "14:00",
-          "service": "VO₂ only"
+          "service": "Aerobic FIT"
         }
       ]
     }

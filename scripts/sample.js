@@ -38,10 +38,10 @@ const updated = new Date(now.getTime() - hoursAgo * 3600000);
 
 // Fake pattern using the real FIT service names: a few slots on weekdays only.
 const patterns = [
-  [{ time: '08:30', service: 'DXA only' }, { time: '10:30', service: 'DXA + VO₂' }, { time: '13:30', service: 'DXA + VO₂' }, { time: '14:00', service: 'VO₂ only' }],
-  [{ time: '11:00', service: 'Muscle FIT' }, { time: '11:00', service: 'DXA only' }, { time: '13:00', service: 'VO₂ only' }],
+  [{ time: '08:30', service: 'DXA only' }, { time: '10:30', service: 'DXA + VO₂' }, { time: '13:30', service: 'DXA + VO₂' }, { time: '14:00', service: 'Aerobic FIT' }],
+  [{ time: '11:00', service: 'Muscle FIT' }, { time: '11:00', service: 'DXA only' }, { time: '13:00', service: 'Aerobic FIT' }],
   [{ time: '09:30', service: 'DXA + VO₂' }, { time: '12:00', service: 'DXA only' }, { time: '14:30', service: 'Muscle FIT' }],
-  [{ time: '07:30', service: 'DXA only' }, { time: '13:30', service: 'VO₂ only' }, { time: '15:00', service: 'DXA only' }],
+  [{ time: '07:30', service: 'DXA only' }, { time: '13:30', service: 'Aerobic FIT' }, { time: '15:00', service: 'DXA only' }],
 ];
 
 const days = [];
