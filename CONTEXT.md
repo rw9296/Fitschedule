@@ -88,6 +88,10 @@ The sync applies these when working out openings from the staff schedule.
 
 ## Staff
 
+**Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked through this site.** Openings are
+worked out for these three only. Everyone else's appointments still count for equipment: if their
+appointment uses the metabolic cart or the DXA scanner, that equipment is busy (see Equipment).
+
 Names exactly as they appear in Full Slate's Staff list, with their calendar color (from a
 screenshot of the schedule sidebar, 2026-11-08). The services each person can perform are still
 to be filled in.
@@ -96,14 +100,14 @@ to be filled in.
 | --- | --- | --- | --- |
 | Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
 | Xavier Cantu | purple | Everything except RMR (all single services and combinations) | Takes over the aerobic part of a combo after Rachel's DXA |
-| Angeles Villarreal | teal | TBD | |
-| Brittany Crim | blue | TBD | Same-looking blue as Jacob Soriano |
-| Jenna Schmitz | beige | TBD | |
-| Lidia Gutierrez | gray | TBD | |
+| Angeles Villarreal | teal | Not booked by text | |
+| Brittany Crim | blue | Not booked by text | Same-looking blue as Jacob Soriano |
+| Jenna Schmitz | beige | Not booked by text | |
+| Lidia Gutierrez | gray | Not booked by text | |
 | Sammy Reyes | green | Everything except RMR (all single services and combinations) | Takes over the aerobic part of a combo after Rachel's DXA |
-| Ellen Tally | red / salmon | TBD | |
-| Brittney Fernandez | orange | TBD | Spelled "Brittney", unlike Brittany Crim |
-| Jacob Soriano | blue | TBD | Same-looking blue as Brittany Crim |
+| Ellen Tally | red / salmon | Not booked by text | |
+| Brittney Fernandez | orange | Not booked by text | Spelled "Brittney", unlike Brittany Crim |
+| Jacob Soriano | blue | Not booked by text | Same-looking blue as Brittany Crim |
 
 Reading tip for the sync: identify staff by name in the page text, not by color. Brittany Crim and
 Jacob Soriano share a near-identical blue, and the two first names are spelled differently.
@@ -112,6 +116,8 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** Openings only for Rachel Watson, Xavier Cantu and Sammy Reyes. Other staff's appointments
+  still block shared equipment. Why: only these three are booked by text.
 - **2026-11-08:** Filter buttons split into Single and Combined groups; added "Body Comp + Lactate FIT" (90 min).
   Why: 12 buttons were too many to scan in one list.
 - **2026-11-08:** Added "Body Comp + Aerobic FIT with Lactate" (2½ hours) to the site. Why: offered, DXA first.

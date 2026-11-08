@@ -17,6 +17,8 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
 - Full Slate service names all start with 🤘. Ignore it when matching names, and
   never put it in availability.json.
+- Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked by text. Work out openings for
+  them only, but still read every staff member's appointments for equipment use.
 - Business rules: read CONTEXT.md first. Its Staff, Booking rules and Equipment sections say who
   can perform each service, allowed start times, and shared equipment (for example, only one
   metabolic cart). A time is open only if every one of those rules is met.
