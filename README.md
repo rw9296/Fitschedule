@@ -41,7 +41,7 @@ sync, so an older sample file fails until you run `npm run sample` again.
    do this once.
 2. Every push to `main` runs `.github/workflows/pages.yml`. It checks `availability.json` is
    well-formed and then publishes `public/`. If the check fails, the previous site stays up.
-3. The site is at `https://rw9296.github.io/fitschedule/`. The **Actions** tab shows each deploy.
+3. The site is at `https://rw9296.github.io/Fitschedule/`. The **Actions** tab shows each deploy.
 
 The fonts (Barlow Condensed, Source Sans 3) are self-hosted in `public/fonts/` under the SIL Open
 Font License, so the page makes no requests to other sites.
