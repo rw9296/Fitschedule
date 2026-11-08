@@ -84,13 +84,18 @@ The sync applies these when working out openings from the staff schedule.
 - **Metabolic cart: only one.** RMR, Aerobic FIT (also the Aerobic part of
   Body Comp + Aerobic FIT), Lactate FIT and Aerobic FIT with Lactate all use it, so no two of them can overlap. One opening for each means the cart
   is free for that service's whole length, not just that a qualified staff member is free.
-- **DXA scanners:** number unconfirmed. Used by Body Comp FIT and Bone Density FIT.
+- **DXA scanner: only one.** Used by Body Comp FIT, Bone Density FIT and every combination with
+  Body Comp. At most two DXA appointments may overlap (the scan itself is 8–12 minutes, so two can
+  share it). Never three at once: if two of Rachel, Xavier and Sammy already have a DXA appointment
+  at a time, the third can't be offered one then. Unconfirmed: whether the limit is about
+  overlapping appointments or only the same start time; the sync uses overlapping, which is safer.
+- **Only Rachel, Xavier and Sammy use either machine.** Other staff never block the equipment.
 
 ## Staff
 
 **Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked through this site.** Openings are
-worked out for these three only. Everyone else's appointments still count for equipment: if their
-appointment uses the metabolic cart or the DXA scanner, that equipment is busy (see Equipment).
+worked out for these three only. The other seven don't use the metabolic cart or the DXA scanner,
+so the sync ignores their appointments entirely.
 
 Names exactly as they appear in Full Slate's Staff list, with their calendar color (from a
 screenshot of the schedule sidebar, 2026-11-08). The services each person can perform are still
@@ -116,6 +121,8 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** At most two DXA appointments at once (one scanner); other staff ignored entirely.
+  Why: owner's rule; only Rachel, Xavier and Sammy use the equipment.
 - **2026-11-08:** Openings only for Rachel Watson, Xavier Cantu and Sammy Reyes. Other staff's appointments
   still block shared equipment. Why: only these three are booked by text.
 - **2026-11-08:** Filter buttons split into Single and Combined groups; added "Body Comp + Lactate FIT" (90 min).
