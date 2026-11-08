@@ -6,7 +6,7 @@
     "validate": "node scripts/validate.js",
     "sample": "node scripts/sample.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "serve": "^14"
   }
 }

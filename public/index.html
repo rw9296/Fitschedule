@@ -2,37 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="format-detection" content="telephone=no">
-<title>Open times</title>
+<meta name="color-scheme" content="light dark">
+<title>FIT Openings</title>
+<link rel="preload" href="fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Source Sans 3"; font-weight: 400; font-display: swap; src: url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Source Sans 3"; font-weight: 600; font-display: swap; src: url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Source Sans 3"; font-weight: 700; font-display: swap; src: url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2"); }
+
   :root {
-    --bg: #ffffff;
-    --surface: #f4f5f7;
-    --text: #15171a;
-    --muted: #555b65;
-    --accent: #1f6f5c;
-    --accent-text: #ffffff;
-    --accent-soft: #e6f2ee;
-    --border: #d9dde3;
+    --bg: #faf8f6;
+    --surface: #ffffff;
+    --fg: #23201d;
+    --muted: #6b635c;
+    --line: #e7e1db;
+    --accent: #bf5700;
+    --accent-soft: #fbeee4;
+    --on-accent: #ffffff;
     --warn-bg: #fff4d6;
-    --warn-text: #5c4300;
-    --warn-border: #f0d48a;
+    --warn-fg: #5c4300;
+    --warn-line: #f0d48a;
+    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --body: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121416;
-      --surface: #1c1f23;
-      --text: #f2f4f6;
-      --muted: #a9b0ba;
-      --accent: #4fbf9f;
-      --accent-text: #0b1a15;
-      --accent-soft: #17302a;
-      --border: #30353c;
-      --warn-bg: #3a2f10;
-      --warn-text: #ffe2a0;
-      --warn-border: #6b5520;
+      --bg: #171412; --surface: #211d1a; --fg: #f1ece7; --muted: #a89e95;
+      --line: #362f2a; --accent: #f08a3c; --accent-soft: #3a2616; --on-accent: #1a0f06;
+      --warn-bg: #3a2f10; --warn-fg: #ffe2a0; --warn-line: #6b5520;
     }
   }
   * { box-sizing: border-box; }
@@ -40,155 +42,130 @@
   body {
     margin: 0;
     background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.45;
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.5;
+    padding: max(28px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(48px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   }
-  main {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 28px 16px 40px;
-  }
-  h1 {
-    font-size: 1.6rem;
-    line-height: 1.2;
-    margin: 0 0 6px;
-  }
-  .lead { margin: 0 0 4px; font-size: 1.05rem; }
-  .updated { margin: 0; color: var(--muted); font-size: 0.9rem; }
-  .stale {
-    margin: 16px 0 0;
-    padding: 12px 14px;
-    border-radius: 10px;
-    background: var(--warn-bg);
-    color: var(--warn-text);
-    border: 1px solid var(--warn-border);
-    font-size: 0.95rem;
-  }
-  .day { margin-top: 28px; }
-  .day h2 {
-    font-size: 1.05rem;
-    margin: 0 0 10px;
-  }
-  .slots {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-  }
-  .slot, .btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 56px;
-    padding: 10px 14px;
-    border-radius: 12px;
-    border: 2px solid var(--accent);
-    background: var(--accent-soft);
-    color: var(--text);
-    text-decoration: none;
+  .wrap { max-width: 720px; margin: 0 auto; display: grid; gap: 24px; }
+  [hidden] { display: none !important; }
+
+  header { display: grid; gap: 8px; }
+  .eyebrow { font-family: var(--display); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-size: 15px; }
+  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(40px, 11vw, 64px); line-height: .95; margin: 0; text-transform: uppercase; text-wrap: balance; }
+  .lead { margin: 4px 0 0; font-size: 18px; }
+  .updated { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .stale { padding: 12px 14px; border-radius: 10px; background: var(--warn-bg); color: var(--warn-fg); border: 1px solid var(--warn-line); font-size: 15px; }
+
+  .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; }
+  .contact p { margin: 0; flex: 1 1 240px; min-width: 0; }
+  .phone { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spacing: .02em; font-variant-numeric: tabular-nums; color: var(--fg); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; padding: 6px 0; }
+
+  button, .pill {
+    font: 600 15px var(--body); cursor: pointer; border-radius: 999px;
+    border: 1.5px solid var(--accent); background: transparent; color: var(--accent);
+    padding: 7px 16px; min-height: 40px; text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center;
     -webkit-tap-highlight-color: transparent;
   }
-  .slot:active, .btn:active { background: var(--accent); color: var(--accent-text); }
-  .slot:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .slot .time { font-size: 1.15rem; font-weight: 650; }
-  .slot .service { font-size: 0.88rem; color: var(--muted); }
-  .slot:active .service { color: inherit; }
-  .btn {
-    align-items: center;
-    background: var(--accent);
-    color: var(--accent-text);
-    font-weight: 600;
-    font-size: 1rem;
-    min-height: 48px;
-    cursor: pointer;
-    font-family: inherit;
-  }
-  .btn.secondary { background: transparent; color: var(--text); border-color: var(--border); }
-  .notice {
-    margin-top: 28px;
-    padding: 18px 16px;
-    border-radius: 12px;
-    background: var(--surface);
-  }
-  .notice p { margin: 0 0 14px; }
-  footer {
-    margin-top: 36px;
-    padding-top: 18px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.92rem;
-  }
-  footer p { margin: 0 0 6px; }
-  footer .phone { color: var(--text); font-size: 1.05rem; font-weight: 600; user-select: all; }
-  .loading { margin-top: 28px; color: var(--muted); }
+  .solid { background: var(--accent); color: var(--on-accent); }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
+  .news { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; }
+  .news p { margin: 0; }
+  .news a { color: var(--accent); font-weight: 600; }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filters button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+
+  .svc-info { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+  .svc-info h2 { font-family: var(--display); font-weight: 700; font-size: 26px; text-transform: uppercase; margin: 0; line-height: 1.05; }
+  .dur { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--accent); white-space: nowrap; }
+  .svc-info p { flex-basis: 100%; margin: 0; color: var(--muted); font-size: 15px; }
+  .svc-info .pill { margin-top: 8px; }
+
+  #list { display: grid; gap: 16px; }
+  .day { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .day h3 { margin: 0; padding: 12px 18px; border-bottom: 1px solid var(--line); font-family: var(--display); font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: .03em; line-height: 1.1; }
+  .day h3 small { font-family: var(--body); font-weight: 400; font-size: 15px; color: var(--muted); letter-spacing: 0; text-transform: none; margin-left: 6px; }
+  .slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 10px; padding: 14px 18px 16px; }
+  .slot {
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: 56px; padding: 8px 14px; border-radius: 10px;
+    border: 1.5px solid var(--accent); background: var(--accent-soft); color: var(--fg);
+    text-decoration: none; -webkit-tap-highlight-color: transparent;
   }
-  .modal-backdrop[hidden] { display: none; }
-  .modal {
-    width: 100%;
-    max-width: 420px;
-    background: var(--bg);
-    color: var(--text);
-    border-radius: 14px;
-    padding: 20px 18px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-  }
-  .modal h3 { margin: 0 0 8px; font-size: 1.1rem; }
-  .modal p { margin: 0 0 12px; font-size: 0.95rem; color: var(--muted); }
-  .modal .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 12px 0 4px; }
-  .modal .copybox {
-    padding: 10px 12px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
-    color: var(--text);
-    font-size: 0.98rem;
-    user-select: all;
-    word-break: break-word;
-  }
+  .slot:active { background: var(--accent); color: var(--on-accent); }
+  .slot .time { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .slot .svc { font-size: 14px; color: var(--muted); line-height: 1.25; }
+  .slot:active .svc { color: inherit; }
+
+  .notice { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .notice p { margin: 0 0 12px; }
+  .loading { color: var(--muted); margin: 0; }
+
+  footer { color: var(--muted); font-size: 15px; display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+  footer p { margin: 0; }
+
+  .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .modal { width: 100%; max-width: 420px; background: var(--surface); color: var(--fg); border-radius: 14px; padding: 20px 18px; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+  .modal h4 { margin: 0 0 6px; font-family: var(--display); font-weight: 700; font-size: 24px; text-transform: uppercase; }
+  .modal p { margin: 0 0 10px; font-size: 15px; color: var(--muted); }
+  .modal .label { font-family: var(--display); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 12px 0 4px; }
+  .modal .copybox { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); user-select: all; word-break: break-word; }
   .modal .actions { display: flex; gap: 10px; margin-top: 18px; }
-  .modal .actions .btn { flex: 1; }
+  .modal .actions button { flex: 1; min-height: 48px; }
+
+  @media (prefers-reduced-motion: no-preference) { button, .pill, .slot { transition: background .15s, color .15s; } }
 </style>
 </head>
 <body>
-<main>
+<div class="wrap">
   <header>
-    <h1 id="business"></h1>
-    <p class="lead">Tap a time to text me and claim it</p>
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>Open times</h1>
+    <p class="lead">Tap a time to text us and claim it.</p>
     <p class="updated" id="updated"></p>
-    <div class="stale" id="stale" hidden>This list may be out of date. Text to confirm before planning around a time.</div>
   </header>
+
+  <div class="stale" id="stale" hidden>This list may be out of date. Text to confirm before planning around a time.</div>
+
+  <section class="contact" aria-label="How to book">
+    <p>Questions, or want a different time? <strong>Text us.</strong></p>
+    <a class="phone" id="phone"></a>
+    <button type="button" class="solid" id="copy-phone">Copy number</button>
+  </section>
+
+  <section class="news" id="news" hidden><p id="news-text"></p></section>
+
+  <nav class="filters" id="filters" aria-label="Filter by assessment" hidden></nav>
+
+  <section class="svc-info" id="svc-info" hidden aria-live="polite"></section>
 
   <section id="list" aria-live="polite">
     <p class="loading">Loading open times…</p>
   </section>
 
   <footer>
-    <p class="phone" id="phone"></p>
-    <p>First come first served. Your spot is held once I text you back.</p>
+    <p>First come first served. Your spot is held once we text you back.</p>
+    <p>None of these work? Text us a date and time that's good for you.</p>
+    <p id="signoff"></p>
   </footer>
-</main>
+</div>
 
 <div class="modal-backdrop" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal">
-    <h3 id="modal-title">Send this as a text</h3>
-    <p>Your browser can't open text messages. Copy the message and text it from your phone.</p>
+    <h4 id="modal-title">Send this as a text</h4>
+    <p>This browser can't open text messages. Copy the message and text it from your phone.</p>
     <div class="label">Text to</div>
     <div class="copybox" id="modal-phone"></div>
-    <div class="label">Message</div>
-    <div class="copybox" id="modal-body"></div>
+    <div id="modal-msg"><div class="label">Message</div>
+    <div class="copybox" id="modal-body"></div></div>
     <div class="actions">
-      <button type="button" class="btn" id="modal-copy">Copy message</button>
-      <button type="button" class="btn secondary" id="modal-close">Close</button>
+      <button type="button" class="solid" id="modal-copy">Copy message</button>
+      <button type="button" id="modal-close">Close</button>
     </div>
   </div>
 </div>
@@ -197,57 +174,74 @@
 (function () {
   'use strict';
 
-  // ---- CONFIG: keep in sync with "Fill these in" in PLAN.md ----
-  var BUSINESS_NAME = 'Your Business Name';  // TODO: fill in
-  var BOOKING_PHONE = '+15555550100';        // TODO: fill in, E.164 (+1 and 10 digits)
+  /* ===== CONFIG: keep in sync with "Fill these in" in PLAN.md ===== */
+  var BUSINESS_NAME = 'Fitness Institute of Texas · UT Austin';
+  var BOOKING_PHONE = '+15127030780';   // E.164
+  var SIGNOFF = "Hook 'em! — Rachel";
   var STALE_AFTER_HOURS = 2;
-  // --------------------------------------------------------------
+
+  // Optional announcement. Set to '' to hide. HTML allowed (it's ours, not from the data).
+  var NEWS_HTML = '<strong>New:</strong> <a href="https://sites.edb.utexas.edu/fit/dxa-bone-density-fit/" target="_blank" rel="noopener">Bone Density FIT</a> and <a href="https://sites.edb.utexas.edu/fit/muscle-fit/" target="_blank" rel="noopener">Muscle FIT</a> appointments. Bone Density FIT can be added to your regular DXA for just 5 extra minutes.';
+
+  // Details shown for each service. `name` should match the service name in
+  // availability.json (matching ignores case, spaces and ₂ vs 2).
+  // `note` is shown when a service has no listed slots.
+  var SERVICES = [
+    { name: 'DXA + VO₂', dur: '2 hours', prep: 'No eating or caffeine 4 hours before. No vigorous exercise the day before.' },
+    { name: 'VO₂ only', dur: '90 min', prep: 'No eating or caffeine 4 hours before. No vigorous exercise the day before.' },
+    { name: 'DXA only', dur: '60 min', prep: 'No eating or exercise 3 hours before.' },
+    { name: 'Bone Density FIT', dur: '30 min', prep: 'Add it to a Total Body DXA for only 5 extra minutes.', note: 'Text us any 30-minute slot that works for you.' },
+    { name: 'Muscle FIT', dur: '2½ hours', prep: 'No vigorous exercise the day before.' }
+  ];
+  /* ================================================================== */
 
   var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var IS_APPLE = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
-
   var $ = function (id) { return document.getElementById(id); };
+  var el = function (tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  };
 
-  document.title = BUSINESS_NAME + ' · Open times';
-  $('business').textContent = BUSINESS_NAME;
-  $('phone').textContent = formatPhone(BOOKING_PHONE);
+  $('eyebrow').textContent = BUSINESS_NAME;
+  $('signoff').textContent = SIGNOFF;
+  if (NEWS_HTML) { $('news-text').innerHTML = NEWS_HTML; $('news').hidden = false; }
 
-  // All dates and times are wall-clock values in the business timezone.
-  // We never convert them; we only parse the numbers and format them.
-  function parseDate(s) {
-    var p = s.split('-');
-    return { y: +p[0], m: +p[1], d: +p[2] };
-  }
-  function weekday(dt) {
-    return new Date(Date.UTC(dt.y, dt.m - 1, dt.d)).getUTCDay();
-  }
+  // ---- formatting: all values are wall-clock in the business timezone, never converted ----
+  function parseDate(s) { var p = s.split('-'); return { y: +p[0], m: +p[1], d: +p[2] }; }
+  function weekday(dt) { return new Date(Date.UTC(dt.y, dt.m - 1, dt.d)).getUTCDay(); }
   function fmtTime(hhmm) {
-    var p = hhmm.split(':');
-    var h = +p[0];
-    var ampm = h < 12 ? 'AM' : 'PM';
-    var h12 = h % 12 === 0 ? 12 : h % 12;
-    return h12 + ':' + p[1] + ' ' + ampm;
-  }
-  function dayHeader(dateStr) {   // "Monday, Nov 10"
-    var dt = parseDate(dateStr);
-    return DAYS[weekday(dt)] + ', ' + MONTHS[dt.m - 1] + ' ' + dt.d;
-  }
-  function dayForText(dateStr) {  // "Monday Nov 10"
-    var dt = parseDate(dateStr);
-    return DAYS[weekday(dt)] + ' ' + MONTHS[dt.m - 1] + ' ' + dt.d;
+    var p = hhmm.split(':'), h = +p[0];
+    return (h % 12 === 0 ? 12 : h % 12) + ':' + p[1] + ' ' + (h < 12 ? 'AM' : 'PM');
   }
   function formatPhone(e164) {
     var m = /^\+1(\d{3})(\d{3})(\d{4})$/.exec(e164);
-    return m ? '(' + m[1] + ') ' + m[2] + '-' + m[3] : e164;
+    return m ? m[1] + '-' + m[2] + '-' + m[3] : e164;
   }
-
+  function norm(s) { return String(s || '').toLowerCase().replace(/₂/g, '2').replace(/[^a-z0-9+]/g, ''); }
+  function serviceInfo(name) {
+    var k = norm(name);
+    for (var i = 0; i < SERVICES.length; i++) if (norm(SERVICES[i].name) === k) return SERVICES[i];
+    return null;
+  }
   function smsHref(body) {
-    var sep = IS_APPLE ? '&' : '?';
-    return 'sms:' + BOOKING_PHONE + sep + 'body=' + encodeURIComponent(body);
+    return 'sms:' + BOOKING_PHONE + (IS_APPLE ? '&' : '?') + 'body=' + encodeURIComponent(body);
+  }
+  function textLink(label, body, cls) {
+    var a = el('a', cls || 'pill solid', label);
+    a.href = smsHref(body);
+    a.setAttribute('data-body', body);
+    return a;
   }
 
-  // Current wall-clock time in the business timezone, as a comparable number.
+  // Tapping the phone number opens a text (sms:), never a call.
+  $('phone').textContent = formatPhone(BOOKING_PHONE);
+  $('phone').href = 'sms:' + BOOKING_PHONE;
+  $('phone').setAttribute('data-body', '');
+
   function nowWallMs(tz) {
     try {
       var parts = new Intl.DateTimeFormat('en-US', {
@@ -256,9 +250,7 @@
       }).formatToParts(new Date());
       var g = function (t) { for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return +parts[i].value; };
       return Date.UTC(g('year'), g('month') - 1, g('day'), g('hour') % 24, g('minute'), g('second'));
-    } catch (e) {
-      return null;
-    }
+    } catch (e) { return null; }
   }
 
   function renderUpdated(data) {
@@ -267,94 +259,145 @@
     var dt = { y: +m[1], m: +m[2], d: +m[3] };
     $('updated').textContent = 'Last updated ' + fmtTime(m[4] + ':' + m[5]) + ', ' +
       DAYS[weekday(dt)].slice(0, 3) + ' ' + MONTHS[dt.m - 1] + ' ' + dt.d;
-
-    var updatedMs = Date.UTC(dt.y, dt.m - 1, dt.d, +m[4], +m[5]);
     var nowMs = nowWallMs(data.timezone || 'America/Chicago');
-    if (nowMs !== null && nowMs - updatedMs > STALE_AFTER_HOURS * 3600000) {
+    if (nowMs !== null && nowMs - Date.UTC(dt.y, dt.m - 1, dt.d, +m[4], +m[5]) > STALE_AFTER_HOURS * 3600000) {
       $('stale').hidden = false;
     }
   }
 
+  // ---- state ----
+  var allDays = [];
+  var filter = 'all';
+
+  function servicesInData() {
+    var seen = {}, out = [];
+    SERVICES.forEach(function (s) { seen[norm(s.name)] = true; out.push(s.name); });
+    allDays.forEach(function (d) {
+      d.slots.forEach(function (s) {
+        if (s.service && !seen[norm(s.service)]) { seen[norm(s.service)] = true; out.push(s.service); }
+      });
+    });
+    return out;
+  }
+
+  function renderFilters() {
+    var names = servicesInData();
+    var nav = $('filters');
+    nav.textContent = '';
+    if (names.length < 2) { nav.hidden = true; return; }
+    ['all'].concat(names).forEach(function (n) {
+      var b = el('button', null, n === 'all' ? 'All' : n);
+      b.type = 'button';
+      b.setAttribute('data-id', n);
+      b.setAttribute('aria-pressed', String(n === filter));
+      nav.appendChild(b);
+    });
+    nav.hidden = false;
+  }
+
+  function renderInfo(count) {
+    var box = $('svc-info');
+    box.textContent = '';
+    if (filter === 'all') { box.hidden = true; return; }
+    var info = serviceInfo(filter) || { name: filter };
+    box.appendChild(el('h2', null, info.name));
+    if (info.dur) box.appendChild(el('span', 'dur', info.dur));
+    if (info.prep) box.appendChild(el('p', null, info.prep));
+    if (!count) {
+      box.appendChild(el('p', null, info.note || 'No open times listed for this right now.'));
+      var wrap = el('p');
+      wrap.appendChild(textLink('Text us', "Hi! I'm interested in " + info.name + '. What times do you have?'));
+      box.appendChild(wrap);
+    }
+    box.hidden = false;
+  }
+
   function slotLink(date, slot) {
-    var body = "Hi! I'd like to book " + dayForText(date) + ' at ' + fmtTime(slot.time) +
-      (slot.service ? ' for ' + slot.service : '') + '.';
-    var a = document.createElement('a');
-    a.className = 'slot';
-    a.href = smsHref(body);
-    a.setAttribute('data-body', body);
-    var t = document.createElement('span');
-    t.className = 'time';
-    t.textContent = fmtTime(slot.time);
-    a.appendChild(t);
-    if (slot.service) {
-      var s = document.createElement('span');
-      s.className = 'service';
-      s.textContent = slot.service;
-      a.appendChild(s);
+    var dt = parseDate(date);
+    var body = "Hi! I'd like to book " + DAYS[weekday(dt)] + ' ' + MONTHS[dt.m - 1] + ' ' + dt.d +
+      ' at ' + fmtTime(slot.time) + (slot.service ? ' for ' + slot.service : '') + '.';
+    var a = textLink('', body, 'slot');
+    a.appendChild(el('span', 'time', fmtTime(slot.time)));
+    if (slot.service && filter === 'all') {
+      var info = serviceInfo(slot.service);
+      a.appendChild(el('span', 'svc', slot.service + (info && info.dur ? ' · ' + info.dur : '')));
     }
     return a;
   }
 
-  function renderNotice(message) {
-    var box = document.createElement('div');
-    box.className = 'notice';
-    var p = document.createElement('p');
-    p.textContent = message;
-    var a = document.createElement('a');
-    a.className = 'btn';
-    var body = 'Hi! Do you have any openings coming up?';
-    a.href = smsHref(body);
-    a.setAttribute('data-body', body);
-    a.textContent = 'Text me';
-    box.appendChild(p);
-    box.appendChild(a);
-    return box;
-  }
-
-  function render(data) {
+  function renderList() {
     var list = $('list');
     list.textContent = '';
-    renderUpdated(data);
-    var days = (data.days || []).filter(function (d) { return d.slots && d.slots.length; });
-    if (!days.length) {
-      list.appendChild(renderNotice("Nothing open in the next two weeks. Text me and I'll find something."));
-      return;
-    }
-    days.forEach(function (day) {
-      var sec = document.createElement('section');
-      sec.className = 'day';
-      var h = document.createElement('h2');
-      h.textContent = dayHeader(day.date);
-      var grid = document.createElement('div');
-      grid.className = 'slots';
-      day.slots.forEach(function (slot) { grid.appendChild(slotLink(day.date, slot)); });
+    var count = 0;
+    allDays.forEach(function (day) {
+      var slots = day.slots.filter(function (s) { return filter === 'all' || norm(s.service) === norm(filter); });
+      if (!slots.length) return;
+      count += slots.length;
+      var dt = parseDate(day.date);
+      var sec = el('section', 'day');
+      var h = el('h3', null, DAYS[weekday(dt)]);
+      h.appendChild(el('small', null, MONTHS[dt.m - 1] + ' ' + dt.d));
+      h.setAttribute('aria-label', DAYS[weekday(dt)] + ', ' + MONTHS[dt.m - 1] + ' ' + dt.d);
+      var grid = el('div', 'slots');
+      slots.forEach(function (s) { grid.appendChild(slotLink(day.date, s)); });
       sec.appendChild(h);
       sec.appendChild(grid);
       list.appendChild(sec);
     });
+    renderInfo(count);
+    if (!count && filter === 'all') {
+      var n = el('div', 'notice');
+      n.appendChild(el('p', null, "Nothing open in the next two weeks. Text us and we'll find something."));
+      n.appendChild(textLink('Text us', 'Hi! Do you have any openings coming up?'));
+      list.appendChild(n);
+    }
   }
 
+  $('filters').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    filter = b.getAttribute('data-id');
+    $('filters').querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    renderList();
+  });
+
   fetch('availability.json?t=' + Date.now(), { cache: 'no-store' })
-    .then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      renderUpdated(data);
+      allDays = (data.days || []).filter(function (d) { return d.slots && d.slots.length; });
+      renderFilters();
+      renderList();
     })
-    .then(render)
     .catch(function () {
       var list = $('list');
       list.textContent = '';
-      list.appendChild(renderNotice("Couldn't load open times right now. Text me and I'll find something."));
+      var n = el('div', 'notice');
+      n.appendChild(el('p', null, "Couldn't load open times right now. Text us and we'll find something."));
+      n.appendChild(textLink('Text us', 'Hi! Do you have any openings coming up?'));
+      list.appendChild(n);
     });
 
-  // ---- Desktop fallback ----
-  // If tapping an sms: link doesn't hand off to another app (page never loses
-  // focus or visibility), the browser can't send texts: show the copy modal.
+  // ---- copy helpers ----
+  function copy(text, btn, label, selectEl) {
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = label; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(selectEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (_) { fallback(); }
+  }
+  $('copy-phone').addEventListener('click', function (e) {
+    copy(formatPhone(BOOKING_PHONE), e.currentTarget, 'Copy number', $('phone'));
+  });
+
+  // ---- desktop fallback: if tapping an sms: link doesn't hand off to another app ----
   var pending = null;
   function cancelPending() { if (pending) { clearTimeout(pending); pending = null; } }
   window.addEventListener('blur', cancelPending);
   window.addEventListener('pagehide', cancelPending);
   document.addEventListener('visibilitychange', function () { if (document.hidden) cancelPending(); });
-
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[data-body]');
     if (!a) return;
@@ -369,35 +412,23 @@
   var lastFocus = null;
   function openModal(body) {
     lastFocus = document.activeElement;
-    $('modal-phone').textContent = formatPhone(BOOKING_PHONE) + '  (' + BOOKING_PHONE + ')';
+    $('modal-phone').textContent = formatPhone(BOOKING_PHONE);
     $('modal-body').textContent = body;
-    $('modal-copy').textContent = 'Copy message';
+    $('modal-msg').hidden = !body;
+    $('modal-copy').setAttribute('data-what', body ? 'message' : 'number');
+    $('modal-copy').textContent = body ? 'Copy message' : 'Copy number';
     $('modal').hidden = false;
     $('modal-copy').focus();
   }
-  function closeModal() {
-    $('modal').hidden = true;
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
+  function closeModal() { $('modal').hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
   $('modal-close').addEventListener('click', closeModal);
   $('modal').addEventListener('click', function (e) { if (e.target === $('modal')) closeModal(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !$('modal').hidden) closeModal(); });
-  $('modal-copy').addEventListener('click', function () {
-    var text = $('modal-body').textContent;
-    var done = function () { $('modal-copy').textContent = 'Copied'; };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { selectText($('modal-body')); });
-    } else {
-      selectText($('modal-body'));
-    }
+  $('modal-copy').addEventListener('click', function (e) {
+    var isMsg = e.currentTarget.getAttribute('data-what') === 'message';
+    copy(isMsg ? $('modal-body').textContent : formatPhone(BOOKING_PHONE), e.currentTarget,
+      isMsg ? 'Copy message' : 'Copy number', isMsg ? $('modal-body') : $('modal-phone'));
   });
-  function selectText(el) {
-    var r = document.createRange();
-    r.selectNodeContents(el);
-    var s = window.getSelection();
-    s.removeAllRanges();
-    s.addRange(r);
-  }
 })();
 </script>
 </body>

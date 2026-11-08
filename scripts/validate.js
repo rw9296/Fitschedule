@@ -2,7 +2,11 @@
 // Validates public/availability.json before it is committed.
 // No dependencies. Exits 1 with a clear message on any failure.
 //
-// Usage: node scripts/validate.js [path/to/availability.json]
+// Usage: node scripts/validate.js [--structure-only] [path/to/availability.json]
+//
+// --structure-only skips the freshness and date-window checks. The deploy
+// workflow uses it so a later push of index.html still deploys while the
+// data is a few hours old. The hourly sync always runs the full check.
 
 'use strict';
 
@@ -19,7 +23,9 @@ const EARLIEST = '06:00';
 const LATEST = '22:00';
 const MAX_SLOTS = 300;
 
-const file = process.argv[2] || path.join(__dirname, '..', 'public', 'availability.json');
+const args = process.argv.slice(2);
+const structureOnly = args.includes('--structure-only');
+const file = args.find((a) => !a.startsWith('--')) || path.join(__dirname, '..', 'public', 'availability.json');
 
 function fail(msg) {
   console.error(`FAIL: ${msg}`);
@@ -77,10 +83,10 @@ if (!parseDate(`${um[1]}-${um[2]}-${um[3]}`) || updated.h > 23 || updated.mi > 5
 }
 const now = nowInZone();
 const ageMin = (wallMs(now) - wallMs(updated)) / 60000;
-if (ageMin > MAX_AGE_MINUTES) {
+if (!structureOnly && ageMin > MAX_AGE_MINUTES) {
   fail(`"updated" is ${Math.round(ageMin)} minutes old (max ${MAX_AGE_MINUTES}). Current ${TIMEZONE} time is ${String(now.h).padStart(2, '0')}:${String(now.mi).padStart(2, '0')}.`);
 }
-if (ageMin < -FUTURE_SKEW_MINUTES) {
+if (!structureOnly && ageMin < -FUTURE_SKEW_MINUTES) {
   fail(`"updated" is ${Math.round(-ageMin)} minutes in the future. Is it in ${TIMEZONE} local time?`);
 }
 
@@ -103,8 +109,8 @@ data.days.forEach((day, i) => {
   const date = parseDate(day.date);
   if (!date) fail(`${where}.date must be a real date in YYYY-MM-DD (got ${JSON.stringify(day.date)})`);
   const dMs = wallMs(date);
-  if (dMs < todayMs) fail(`${where}.date ${day.date} is in the past`);
-  if (dMs > lastAllowedMs) fail(`${where}.date ${day.date} is more than ${DAYS_AHEAD + 1} days ahead`);
+  if (!structureOnly && dMs < todayMs) fail(`${where}.date ${day.date} is in the past`);
+  if (!structureOnly && dMs > lastAllowedMs) fail(`${where}.date ${day.date} is more than ${DAYS_AHEAD + 1} days ahead`);
   if (prevDate !== null && day.date <= prevDate) fail(`days not sorted or duplicated: ${day.date} comes after ${prevDate}`);
   prevDate = day.date;
 
@@ -124,7 +130,8 @@ data.days.forEach((day, i) => {
     if ('service' in slot && (typeof slot.service !== 'string' || !slot.service.trim())) {
       fail(`${sw}.service must be a non-empty string when present`);
     }
-    const key = `${day.date} ${t}`;
+    // Different services may share a start time; the same service may not.
+    const key = `${day.date} ${t} ${slot.service || ''}`.trim();
     if (seen.has(key)) fail(`duplicate slot ${key}`);
     seen.add(key);
     if (prevTime !== null && t < prevTime) fail(`slots on ${day.date} not sorted: ${t} comes after ${prevTime}`);
@@ -136,4 +143,4 @@ data.days.forEach((day, i) => {
 if (total < 0 || total > MAX_SLOTS) fail(`total slot count ${total} is outside 0-${MAX_SLOTS}`);
 
 const hhmm = `${String(updated.h).padStart(2, '0')}:${String(updated.mi).padStart(2, '0')}`;
-console.log(`OK: ${total} slot${total === 1 ? '' : 's'} across ${data.days.length} day${data.days.length === 1 ? '' : 's'}, updated ${hhmm}.`);
+console.log(`OK${structureOnly ? ' (structure only)' : ''}: ${total} slot${total === 1 ? '' : 's'} across ${data.days.length} day${data.days.length === 1 ? '' : 's'}, updated ${hhmm}.`);

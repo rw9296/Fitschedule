@@ -36,19 +36,19 @@ const isoLocal = (d) => `${isoDate(d)}T${pad(d.getUTCHours())}:${pad(d.getUTCMin
 
 const updated = new Date(now.getTime() - hoursAgo * 3600000);
 
-// Fake pattern: a few slots on most days, nothing on Sundays.
+// Fake pattern using the real FIT service names: a few slots on weekdays only.
 const patterns = [
-  [{ time: '09:00', service: 'Initial Consultation' }, { time: '11:30', service: 'Follow Up' }, { time: '15:00', service: 'Follow Up' }],
-  [{ time: '10:00', service: 'Initial Consultation' }, { time: '14:30', service: 'Follow Up' }],
-  [{ time: '08:00', service: 'Follow Up' }, { time: '12:00', service: 'Initial Consultation' }, { time: '17:30', service: 'Follow Up' }],
-  [{ time: '13:00', service: 'Follow Up' }],
+  [{ time: '08:30', service: 'DXA only' }, { time: '10:30', service: 'DXA + VO₂' }, { time: '13:30', service: 'DXA + VO₂' }, { time: '14:00', service: 'VO₂ only' }],
+  [{ time: '11:00', service: 'Muscle FIT' }, { time: '11:00', service: 'DXA only' }, { time: '13:00', service: 'VO₂ only' }],
+  [{ time: '09:30', service: 'DXA + VO₂' }, { time: '12:00', service: 'DXA only' }, { time: '14:30', service: 'Muscle FIT' }],
+  [{ time: '07:30', service: 'DXA only' }, { time: '13:30', service: 'VO₂ only' }, { time: '15:00', service: 'DXA only' }],
 ];
 
 const days = [];
 if (!empty) {
   for (let i = 1; i <= DAYS_AHEAD; i++) {
     const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + i));
-    if (d.getUTCDay() === 0 || i % 5 === 0) continue;
+    if (d.getUTCDay() === 0 || d.getUTCDay() === 6) continue;
     days.push({ date: isoDate(d), slots: patterns[i % patterns.length] });
   }
 }

@@ -5,26 +5,29 @@ Work one phase at a time. Do not start a phase until the previous one is verifie
 
 ## Fill these in before starting
 
-- FULLSLATE_SUBDOMAIN: ________ (the part before .fullslate.com)
-- BOOKING_PHONE: +1________ (E.164, no spaces or dashes)
-- BUSINESS_NAME: ________
-- SERVICES_TO_SHOW: `all` or a list of service names exactly as they appear in Full Slate
+- FULLSLATE_SCHEDULE_URL: https://app.fullslate.com/schedule (logged-in staff schedule)
+- BOOKING_PHONE: +15127030780 (shown as 512-703-0780)
+- BUSINESS_NAME: Fitness Institute of Texas · UT Austin
+- SERVICES_TO_SHOW: DXA + VO₂, VO₂ only, DXA only, Bone Density FIT, Muscle FIT
+  (confirm these match the names in Full Slate exactly during Phase 2)
 - DAYS_AHEAD: 14
 - TIMEZONE: America/Chicago
 - GITHUB_REPO: github.com/rw9296/fitschedule
+- HOSTING: GitHub Pages, deployed by `.github/workflows/pages.yml` on every push to `main`
 
-> BOOKING_PHONE and BUSINESS_NAME are used in `public/index.html` (CONFIG block at the top of the script).
-> TIMEZONE and DAYS_AHEAD are used in `scripts/validate.js` (constants at the top).
+> BOOKING_PHONE, BUSINESS_NAME, and per-service duration/prep text are in `public/index.html`
+> (CONFIG block at the top of the script). TIMEZONE and DAYS_AHEAD are in `scripts/validate.js`
+> and `scripts/sample.js` (constants at the top).
 
 ## What we are building
 
-A static landing page on Railway that shows open appointment slots. Clients tap a slot and their
+A static landing page on GitHub Pages that shows open appointment slots. Clients tap a slot and their
 phone opens a prefilled text to BOOKING_PHONE. The owner confirms by replying and books it manually
 in Full Slate.
 
 Availability is refreshed hourly by a Claude scheduled task running on the owner's Mac. The task
 reads Full Slate in Chrome (already logged in), rewrites `public/availability.json`, and pushes that
-one file. Railway redeploys on push.
+one file. A GitHub Actions workflow redeploys GitHub Pages on push (usually within a minute).
 
 There is no API, no backend, no database. The repo is the database.
 
@@ -39,7 +42,7 @@ There is no API, no backend, no database. The repo is the database.
 
 ## Phase 1: Static site, deployed, with fake data
 
-Goal: the page is live on Railway and the sms links work on a real phone. No Full Slate yet.
+Goal: the page is live on GitHub Pages and the sms links work on a real phone. No Full Slate yet.
 
 ### Files to create
 
@@ -56,23 +59,12 @@ availability-site/
   README.md
 ```
 
-### package.json
+### Hosting
 
-Zero-build static hosting. Railway's Nixpacks detects this and runs `npm start`.
-
-```json
-{
-  "name": "availability-site",
-  "private": true,
-  "scripts": {
-    "start": "serve public -l ${PORT:-3000} --no-clipboard",
-    "validate": "node scripts/validate.js"
-  },
-  "dependencies": {
-    "serve": "^14"
-  }
-}
-```
+Zero-build static hosting on GitHub Pages. `.github/workflows/pages.yml` runs on every push to
+`main`: it checks `availability.json` with `validate.js --structure-only` (so a malformed file never
+deploys and the previous site stays up), then publishes the `public/` folder.
+`npm start` serves `public/` locally for previews only (`serve` is a dev dependency).
 
 ### availability.json schema
 
@@ -128,7 +120,7 @@ Each slot is an anchor:
 - On a desktop browser that does nothing with sms links, fall back to showing the body text and
   phone number in a small modal so the person can copy it
 
-Fetch `availability.json?t=<Date.now()>` so Railway's CDN never serves a stale copy.
+Fetch `availability.json?t=<Date.now()>` so the GitHub Pages CDN (10 minute cache) never serves a stale copy.
 
 Keep the design clean and calm: one accent color, system font stack, 16px side padding, large tap
 targets (min 48px tall), high contrast. No icons, no images, no external requests of any kind.
@@ -146,10 +138,12 @@ Checks:
 - Every date is today or later and within DAYS_AHEAD + 1 days
 - Every time matches `^\d{2}:\d{2}$` and is between 06:00 and 22:00
 - Total slot count is between 0 and 300
-- No duplicate date + time pairs
+- No duplicate date + time + service (different services may share a start time)
 - Days and slots are sorted
 
 Also print a one-line summary on success: `OK: 23 slots across 9 days, updated 15:00.`
+
+`--structure-only` skips the freshness and date-window checks. Only the deploy workflow uses it.
 
 ### CLAUDE.md
 
@@ -172,9 +166,9 @@ Config lives at the top of PLAN.md under "Fill these in".
 ### Phase 1 verification
 
 - `npm install && npm start`, open localhost, confirm the fake data renders
-- Push to GITHUB_REPO, create a Railway project from the repo, confirm it deploys and serves on the
-  Railway URL
-- Open the Railway URL on an iPhone and an Android if available. Tap a slot. Confirm Messages opens
+- Push to GITHUB_REPO. In the repo's Settings > Pages, set Source to "GitHub Actions". Confirm the
+  "Deploy to GitHub Pages" workflow succeeds and the site serves at the Pages URL
+- Open the Pages URL on an iPhone and an Android if available. Tap a slot. Confirm Messages opens
   with the right number and body
 - Hand-edit `updated` to 3 hours ago, push, confirm the stale banner appears
 - `npm run validate` passes on the sample, and fails when you break a date
@@ -198,12 +192,11 @@ description: Read current openings from Full Slate in Chrome and update public/a
 
 ## Source page
 
-Default: the public booking page at https://FULLSLATE_SUBDOMAIN.fullslate.com
-This page lists open times per day as plain text and does not require login.
-It is the preferred source because text is more reliable to read than a calendar grid.
+Source: the logged-in Full Slate schedule at https://app.fullslate.com/schedule,
+in the owner's already-open Chrome session.
 
-Fallback: if the public page is unavailable or does not show the needed services,
-use the logged-in Full Slate dashboard calendar in the already-open Chrome session.
+(Decide during Phase 2 whether a public booking page exists and reads more reliably
+as text than the calendar grid. If so, prefer it and record `public_booking_page`.)
 
 ## Steps
 
@@ -295,7 +288,7 @@ In Claude desktop or Claude Code, ask Claude to create a scheduled task with:
 
 ### Phase 3 verification
 
-- Watch the first 3 scheduled runs happen (check git log and the Railway deploy list)
+- Watch the first 3 scheduled runs happen (check git log and the repo's Actions tab for Pages deploys)
 - Leave it for two full days before sharing the URL with clients
 - Spot check twice a day: open the site, open Full Slate, compare
 
@@ -314,4 +307,4 @@ In Claude desktop or Claude Code, ask Claude to create a scheduled task with:
 
 - Second scheduled task that texts or emails her when the sync has skipped 3 runs in a row
 - A "notify me when something opens" form (would need a backend, skip for now)
-- Custom domain on Railway
+- Custom domain on GitHub Pages

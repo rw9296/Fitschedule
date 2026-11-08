@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T15:23:28",
+  "updated": "2026-11-08T15:30:18",
   "timezone": "America/Chicago",
   "days_ahead": 14,
   "source": "sample_data",
@@ -8,12 +8,16 @@
       "date": "2026-11-09",
       "slots": [
         {
-          "time": "10:00",
-          "service": "Initial Consultation"
+          "time": "11:00",
+          "service": "Muscle FIT"
         },
         {
-          "time": "14:30",
-          "service": "Follow Up"
+          "time": "11:00",
+          "service": "DXA only"
+        },
+        {
+          "time": "13:00",
+          "service": "VO₂ only"
         }
       ]
     },
@@ -21,16 +25,16 @@
       "date": "2026-11-10",
       "slots": [
         {
-          "time": "08:00",
-          "service": "Follow Up"
+          "time": "09:30",
+          "service": "DXA + VO₂"
         },
         {
           "time": "12:00",
-          "service": "Initial Consultation"
+          "service": "DXA only"
         },
         {
-          "time": "17:30",
-          "service": "Follow Up"
+          "time": "14:30",
+          "service": "Muscle FIT"
         }
       ]
     },
@@ -38,8 +42,16 @@
       "date": "2026-11-11",
       "slots": [
         {
-          "time": "13:00",
-          "service": "Follow Up"
+          "time": "07:30",
+          "service": "DXA only"
+        },
+        {
+          "time": "13:30",
+          "service": "VO₂ only"
+        },
+        {
+          "time": "15:00",
+          "service": "DXA only"
         }
       ]
     },
@@ -47,33 +59,37 @@
       "date": "2026-11-12",
       "slots": [
         {
-          "time": "09:00",
-          "service": "Initial Consultation"
+          "time": "08:30",
+          "service": "DXA only"
         },
         {
-          "time": "11:30",
-          "service": "Follow Up"
+          "time": "10:30",
+          "service": "DXA + VO₂"
         },
         {
-          "time": "15:00",
-          "service": "Follow Up"
+          "time": "13:30",
+          "service": "DXA + VO₂"
+        },
+        {
+          "time": "14:00",
+          "service": "VO₂ only"
         }
       ]
     },
     {
-      "date": "2026-11-14",
+      "date": "2026-11-13",
       "slots": [
         {
-          "time": "08:00",
-          "service": "Follow Up"
+          "time": "11:00",
+          "service": "Muscle FIT"
         },
         {
-          "time": "12:00",
-          "service": "Initial Consultation"
+          "time": "11:00",
+          "service": "DXA only"
         },
         {
-          "time": "17:30",
-          "service": "Follow Up"
+          "time": "13:00",
+          "service": "VO₂ only"
         }
       ]
     },
@@ -81,16 +97,20 @@
       "date": "2026-11-16",
       "slots": [
         {
-          "time": "09:00",
-          "service": "Initial Consultation"
+          "time": "08:30",
+          "service": "DXA only"
         },
         {
-          "time": "11:30",
-          "service": "Follow Up"
+          "time": "10:30",
+          "service": "DXA + VO₂"
         },
         {
-          "time": "15:00",
-          "service": "Follow Up"
+          "time": "13:30",
+          "service": "DXA + VO₂"
+        },
+        {
+          "time": "14:00",
+          "service": "VO₂ only"
         }
       ]
     },
@@ -98,12 +118,33 @@
       "date": "2026-11-17",
       "slots": [
         {
-          "time": "10:00",
-          "service": "Initial Consultation"
+          "time": "11:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "DXA only"
+        },
+        {
+          "time": "13:00",
+          "service": "VO₂ only"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "slots": [
+        {
+          "time": "09:30",
+          "service": "DXA + VO₂"
+        },
+        {
+          "time": "12:00",
+          "service": "DXA only"
         },
         {
           "time": "14:30",
-          "service": "Follow Up"
+          "service": "Muscle FIT"
         }
       ]
     },
@@ -111,8 +152,16 @@
       "date": "2026-11-19",
       "slots": [
         {
-          "time": "13:00",
-          "service": "Follow Up"
+          "time": "07:30",
+          "service": "DXA only"
+        },
+        {
+          "time": "13:30",
+          "service": "VO₂ only"
+        },
+        {
+          "time": "15:00",
+          "service": "DXA only"
         }
       ]
     },
@@ -120,29 +169,20 @@
       "date": "2026-11-20",
       "slots": [
         {
-          "time": "09:00",
-          "service": "Initial Consultation"
+          "time": "08:30",
+          "service": "DXA only"
         },
         {
-          "time": "11:30",
-          "service": "Follow Up"
+          "time": "10:30",
+          "service": "DXA + VO₂"
         },
         {
-          "time": "15:00",
-          "service": "Follow Up"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-21",
-      "slots": [
-        {
-          "time": "10:00",
-          "service": "Initial Consultation"
+          "time": "13:30",
+          "service": "DXA + VO₂"
         },
         {
-          "time": "14:30",
-          "service": "Follow Up"
+          "time": "14:00",
+          "service": "VO₂ only"
         }
       ]
     }
