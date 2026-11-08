@@ -37,6 +37,10 @@ Full Slate service names confirmed so far: Body Comp FIT (the DXA scan, once lab
 Aerobic FIT (the VO₂ max test, once labeled "VO₂ only"), Lactate FIT, Aerobic FIT with Lactate.
 Unconfirmed: the Full Slate names for Bone Density FIT, Muscle FIT and RMR.
 
+**Every service name in Full Slate starts with a longhorn symbol** (it's Texas). The exact
+character is unconfirmed. When matching, ignore it and any spacing after it: "<longhorn> Body Comp
+FIT" in Full Slate is "Body Comp FIT" on the site.
+
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
 cart (see Equipment).
@@ -89,6 +93,8 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-08:** The sync ignores the longhorn prefix on Full Slate service names when matching.
+  Why: every name has it; the site labels don't.
 - **2026-11-08:** Renamed "DXA only" to "Body Comp FIT" and "DXA + VO₂" to "Body Comp + Aerobic FIT"; prep lines
   mention DXA and VO₂ so clients still recognize them. Why: match Full Slate names.
 - **2026-11-08:** Renamed "VO₂ only" to "Aerobic FIT" on the site. Why: same service; matches Full Slate.
