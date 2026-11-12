@@ -1,64 +1,9 @@
 {
-  "updated": "2026-11-08T16:09:36",
+  "updated": "2026-11-11T20:43:43",
   "timezone": "America/Chicago",
-  "days_ahead": 14,
-  "source": "sample_data",
+  "days_ahead": 7,
+  "source": "dashboard_calendar",
   "days": [
-    {
-      "date": "2026-11-09",
-      "slots": [
-        {
-          "time": "11:00",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "11:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:00",
-          "service": "Aerobic FIT"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-10",
-      "slots": [
-        {
-          "time": "09:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "12:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "14:30",
-          "service": "Muscle FIT"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-11",
-      "slots": [
-        {
-          "time": "07:30",
-          "service": "RMR + Body Comp FIT"
-        },
-        {
-          "time": "09:00",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "13:30",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "15:00",
-          "service": "Body Comp FIT"
-        }
-      ]
-    },
     {
       "date": "2026-11-12",
       "slots": [
@@ -67,16 +12,204 @@
           "service": "Body Comp FIT"
         },
         {
-          "time": "10:30",
+          "time": "11:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "11:00",
           "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT with Lactate"
         },
         {
           "time": "13:30",
           "service": "Body Comp + Aerobic FIT"
         },
         {
+          "time": "13:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
           "time": "14:00",
           "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Lactate FIT"
         }
       ]
     },
@@ -84,88 +217,230 @@
       "date": "2026-11-13",
       "slots": [
         {
-          "time": "11:00",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "11:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:00",
-          "service": "Aerobic FIT"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-16",
-      "slots": [
-        {
-          "time": "08:30",
-          "service": "Body Comp FIT"
-        },
-        {
           "time": "10:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "13:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "14:00",
-          "service": "Aerobic FIT"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-17",
-      "slots": [
-        {
-          "time": "11:00",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "11:00",
           "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:00",
-          "service": "Aerobic FIT"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-18",
-      "slots": [
-        {
-          "time": "09:30",
-          "service": "Body Comp + Aerobic FIT"
         },
         {
           "time": "12:00",
           "service": "Body Comp FIT"
         },
         {
+          "time": "12:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
           "time": "14:30",
           "service": "Muscle FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Body Comp FIT"
         }
       ]
     },
     {
-      "date": "2026-11-19",
+      "date": "2026-11-14",
       "slots": [
         {
-          "time": "07:30",
+          "time": "08:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "RMR"
+        },
+        {
+          "time": "08:00",
+          "service": "RMR + Body Comp FIT"
+        },
+        {
+          "time": "08:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "08:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "08:30",
+          "service": "RMR"
+        },
+        {
+          "time": "08:30",
           "service": "RMR + Body Comp FIT"
         },
         {
           "time": "09:00",
-          "service": "Body Comp + Lactate FIT"
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "RMR"
+        },
+        {
+          "time": "09:00",
+          "service": "RMR + Body Comp FIT"
+        },
+        {
+          "time": "09:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "09:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "10:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "10:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "10:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "10:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Muscle FIT"
         },
         {
           "time": "13:30",
-          "service": "Aerobic FIT"
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Body Comp FIT"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "slots": [
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
         },
         {
           "time": "15:00",
@@ -174,23 +449,685 @@
       ]
     },
     {
-      "date": "2026-11-20",
+      "date": "2026-11-16",
       "slots": [
         {
-          "time": "08:30",
+          "time": "10:00",
           "service": "Body Comp FIT"
         },
         {
-          "time": "10:30",
+          "time": "13:00",
           "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT with Lactate"
         },
         {
           "time": "13:30",
           "service": "Body Comp + Aerobic FIT"
         },
         {
+          "time": "13:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
           "time": "14:00",
           "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "16:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "16:30",
+          "service": "Lactate FIT"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "slots": [
+        {
+          "time": "09:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "09:00",
+          "service": "RMR"
+        },
+        {
+          "time": "09:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "09:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "09:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "10:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "10:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "10:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "10:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "11:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "16:00",
+          "service": "Lactate FIT"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "slots": [
+        {
+          "time": "07:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "07:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "07:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "07:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "07:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "07:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "08:00",
+          "service": "RMR"
+        },
+        {
+          "time": "08:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "08:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "10:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "10:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Aerobic FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Aerobic FIT with Lactate"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp + Lactate FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "12:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "13:00",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Aerobic FIT with Lactate"
+        },
+        {
+          "time": "13:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Aerobic FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Lactate FIT"
         }
       ]
     }
