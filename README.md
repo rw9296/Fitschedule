@@ -65,11 +65,14 @@ Also install the Claude in Chrome extension in that Chrome and sign in.
 
 Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say `/sync-availability`.
 
-- **First run (discovery):** while `PUBLIC_BOOKING_URL` in
-  `.claude/skills/sync-availability/SKILL.md` is `TBD`, the skill only looks around Full Slate,
-  writes what it found to `logs/discovery-*.md`, and recommends a source. Fill in the URL and the
-  "Reading the source" notes, then commit.
-- **After that:** each run reads the openings, builds the file with
+- **Source:** only the logged-in staff schedule (`app.fullslate.com/schedule`), read through
+  Claude in Chrome. There is no public booking page. The sync reads Rachel's, Xavier's and Sammy's
+  working hours and appointments and works out openings from the rules in `CONTEXT.md`.
+- **First run (discovery):** while `READING_NOTES` in
+  `.claude/skills/sync-availability/SKILL.md` is `TBD`, the skill only reads the schedule and
+  writes how it reads as text to `logs/discovery-*.md`. Fill in the "Reading the schedule" notes,
+  set `READING_NOTES` to `done`, then commit.
+- **After that:** each run reads the schedule, works out the openings, builds the file with
   `scripts/write-availability.js`, validates it, and commits and pushes only
   `public/availability.json`.
 - **Failures:** if validation fails or the slot count drops more than 60%, nothing is committed
