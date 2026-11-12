@@ -15,7 +15,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
   Body Comp + Aerobic FIT with Lactate (combination) · Body Comp + Lactate FIT (combination) · Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR + Body Comp FIT (combination) · RMR (may appear as "Calorie FIT")
-- DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
+- DAYS_AHEAD: 7 · TIMEZONE: America/Chicago
 - Full Slate service names all start with 🤘. Ignore it when matching names, and
   never put it in availability.json.
 - Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked by text, and only they use the
@@ -71,7 +71,7 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
    - Metabolic cart: no overlap with any other cart service by the three staff.
    - DXA scanner: no more than two DXA appointments overlapping at any moment.
    - RMR and RMR + Body Comp FIT: Rachel only, starts 7:30–9:00 AM only.
-   - Bone Density FIT: list it only where Body Comp FIT would also be open.
+   - Bone Density FIT: never list it as times (clients text any 30-minute time; the site says so).
    If a day's read was incomplete or ambiguous, leave that day out rather than guess.
 4. Write the openings to a scratch file outside the repo (e.g. `$TMPDIR/slots.json`) as a
    flat JSON array, using the site's service names from SERVICES_TO_SHOW:

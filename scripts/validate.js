@@ -15,7 +15,7 @@ const path = require('path');
 
 // Keep in sync with "Fill these in" at the top of PLAN.md.
 const TIMEZONE = 'America/Chicago';
-const DAYS_AHEAD = 14;
+const DAYS_AHEAD = 7;
 
 const MAX_AGE_MINUTES = 15;
 const FUTURE_SKEW_MINUTES = 2; // tolerate small clock differences

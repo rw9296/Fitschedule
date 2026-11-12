@@ -27,7 +27,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const TIMEZONE = 'America/Chicago';
-const DAYS_AHEAD = 14;
+const DAYS_AHEAD = 7;
 const MAX_DROP = 0.6;
 const MIN_PREVIOUS_FOR_DROP_CHECK = 5;
 const SOURCES = ['dashboard_calendar', 'dashboard_calendar_vision'];

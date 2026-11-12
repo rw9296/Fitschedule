@@ -10,7 +10,7 @@ Work one phase at a time. Do not start a phase until the previous one is verifie
 - BUSINESS_NAME: Fitness Institute of Texas · UT Austin
 - SERVICES_TO_SHOW: Body Comp + Aerobic FIT (combination), Body Comp + Aerobic FIT with Lactate (combination), Body Comp + Lactate FIT (combination), Aerobic FIT, Body Comp FIT, Bone Density FIT, Muscle FIT, Aerobic FIT with Lactate, Lactate FIT, RMR + Body Comp FIT (combination), RMR
   (confirm these match the names in Full Slate exactly during Phase 2)
-- DAYS_AHEAD: 14
+- DAYS_AHEAD: 7 (was 14 until 2026-11-11; see CONTEXT.md)
 - TIMEZONE: America/Chicago
 - GITHUB_REPO: github.com/rw9296/fitschedule
 - HOSTING: GitHub Pages, deployed by `.github/workflows/pages.yml` on every push to `main`
