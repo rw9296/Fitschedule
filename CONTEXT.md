@@ -12,7 +12,8 @@ this file records what we've learned and decided since. Keep it current (see CLA
 - **Sign-off on the site:** "Hook 'em! — Rachel"
 - **Timezone:** America/Chicago
 - **Full Slate:** staff schedule at https://app.fullslate.com/schedule (logged in on the owner's Mac).
-  No public Full Slate booking link was found on the FIT website (checked 2026-11-08).
+  No public Full Slate booking link was found on the FIT website (checked 2026-11-08), and the sync
+  doesn't use one: it reads this staff schedule only.
 
 ## Services
 
@@ -122,10 +123,15 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-11:** The sync reads only the logged-in staff schedule through Claude in Chrome and works
+  out openings from Rachel's, Xavier's and Sammy's appointments using the rules in this file. No
+  public booking page. Source labels are now `dashboard_calendar` and `dashboard_calendar_vision`.
+  Why: owner's decision; no public Full Slate booking link exists.
 - **2026-11-08:** At most two DXA appointments at once (one scanner); other staff ignored entirely.
   Why: owner's rule; only Rachel, Xavier and Sammy use the equipment.
-- **2026-11-08:** Openings only for Rachel Watson, Xavier Cantu and Sammy Reyes. Other staff's appointments
-  still block shared equipment. Why: only these three are booked by text.
+- **2026-11-08:** Openings only for Rachel Watson, Xavier Cantu and Sammy Reyes. ~~Other staff's
+  appointments still block shared equipment.~~ (Replaced the same day by the entry above: other
+  staff are ignored entirely.) Why: only these three are booked by text.
 - **2026-11-08:** Filter buttons split into Single and Combined groups; added "Body Comp + Lactate FIT" (90 min).
   Why: 12 buttons were too many to scan in one list.
 - **2026-11-08:** Added "Body Comp + Aerobic FIT with Lactate" (2½ hours) to the site. Why: offered, DXA first.
@@ -147,6 +153,7 @@ Newest first. One line each: date, decision, why.
   Why: owner's instruction; staff availability always comes from Full Slate.
 - **2026-11-08:** The sync's first run is a read-only discovery run. Why: the staff schedule shows
   booked appointments, not open start times, and inferring gaps risks showing times that aren't open.
+  (Since 2026-11-11 discovery records how to read the staff schedule, not a booking page.)
 - **2026-11-08:** Slots are written by `scripts/write-availability.js`, which also blocks a >60% drop.
   Why: the model never hand-writes timestamps or ordering.
 - **2026-11-08:** Different services may share a start time (unique key is date + time + service).

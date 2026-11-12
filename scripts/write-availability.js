@@ -7,14 +7,14 @@
 //
 // Usage:
 //   node scripts/write-availability.js --source dashboard_calendar slots.json
-//   ... | node scripts/write-availability.js --source public_booking_page -
+//   ... | node scripts/write-availability.js --source dashboard_calendar -
 //
 // Input: a JSON array like
 //   [{ "date": "2026-11-10", "time": "10:00", "service": "Body Comp FIT" }, ...]
 // Dates are YYYY-MM-DD and times are 24h HH:MM, both local America/Chicago.
 //
 // Flags:
-//   --source <name>   public_booking_page | public_booking_page_vision | dashboard_calendar
+//   --source <name>   dashboard_calendar | dashboard_calendar_vision
 //   --allow-drop      skip the 60% drop check (a human only, after checking Full Slate)
 //   --dry-run         print the result instead of writing it
 //
@@ -30,7 +30,7 @@ const TIMEZONE = 'America/Chicago';
 const DAYS_AHEAD = 14;
 const MAX_DROP = 0.6;
 const MIN_PREVIOUS_FOR_DROP_CHECK = 5;
-const SOURCES = ['public_booking_page', 'public_booking_page_vision', 'dashboard_calendar'];
+const SOURCES = ['dashboard_calendar', 'dashboard_calendar_vision'];
 
 const root = path.join(__dirname, '..');
 const target = path.join(root, 'public', 'availability.json');
