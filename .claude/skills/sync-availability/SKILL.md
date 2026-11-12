@@ -11,8 +11,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 
 - SCHEDULE_URL: https://app.fullslate.com/schedule (the logged-in staff schedule, in the owner's
   Chrome). This is the only source. There is no public booking page.
-- READING_NOTES: `TBD` (set to `done` once "Reading the schedule" below is filled in after the
-  discovery run)
+- READING_NOTES: `done` (filled in from the 2026-11-11 discovery run)
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
   Body Comp + Aerobic FIT with Lactate (combination) · Body Comp + Lactate FIT (combination) · Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR + Body Comp FIT (combination) · RMR (may appear as "Calorie FIT")
@@ -55,17 +54,20 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 
 1. Use Claude in Chrome. Open a NEW tab for SCHEDULE_URL. Do not reuse or disturb the owner's
    existing tabs.
-2. For each day from today through today + DAYS_AHEAD, read, for Rachel, Xavier and Sammy only:
-   - their working hours that day (no hours = not working)
-   - every appointment: staff, start, end, service (🤘 removed)
-   Read with get_page_text or read_page FIRST. Take a screenshot only if the text read is empty
-   or clearly incomplete. The source label is `dashboard_calendar`, or
-   `dashboard_calendar_vision` if you needed screenshots for any day.
+2. For each day from today through today + DAYS_AHEAD, read Rachel's, Xavier's and Sammy's
+   working hours and busy blocks with `read-day.js`, as described in "Reading the schedule" below.
+   The source label is `dashboard_calendar`. Use `dashboard_calendar_vision` only if you had to
+   read a day from a screenshot instead (avoid it: screenshots can't tell staff columns apart
+   reliably).
 3. Work out openings from what you read, using CONTEXT.md:
    - Candidate start times are on the hour and half hour, inside the staff member's working hours,
      with the whole service ending by the end of those hours. Skip times already past today.
    - The staff member (or the allowed Rachel → Xavier/Sammy split for Body Comp + an aerobic
-     test) must be free for the service's whole length.
+     test) must be free for the service's whole length. Every busy block counts, including
+     personal events and services the site doesn't offer.
+   - Which machine each busy block uses comes from the "Full Slate names and equipment" table in
+     CONTEXT.md. A service name not in that table counts as using BOTH machines; list each such
+     name in your final report so it can be added.
    - Metabolic cart: no overlap with any other cart service by the three staff.
    - DXA scanner: no more than two DXA appointments overlapping at any moment.
    - RMR and RMR + Body Comp FIT: Rachel only, starts 7:30–9:00 AM only.
@@ -89,15 +91,47 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 
 ## Reading the schedule
 
-(Filled in after the discovery run: which view to use, how to filter to Rachel, Xavier and Sammy,
-how working hours and appointments appear in the page text, how to move between days, and
-anything to ignore.)
+From the 2026-11-11 discovery run. Plain page text is NOT enough: `get_page_text` returns almost
+nothing, and appointment text never names the staff member (staff are only columns headed by
+initials). So read the page structure with the read-only script `read-day.js` in this folder.
+
+- **View:** Day view (the "Day" button). It shows every staff member as a column for one day.
+  Leave the sidebar staff checkboxes alone: they change the owner's saved view.
+- **Read a day:** paste the full contents of `.claude/skills/sync-availability/read-day.js` into
+  Claude in Chrome's `javascript_tool`. It only reads the page. It returns:
+  ```
+  { date: "Nov 11",
+    staff: { Rachel: { hours: "08:00-17:00", busy: ["07:30-08:30 Longhorn Body Comp FIT",
+                                                    "11:00-12:30 (personal)", ...] },
+             Xavier: {...}, Sammy: {...} },
+    problems: [] }
+  ```
+  `hours` is unshaded (working) time, comma-separated if split; `""` means off all day.
+  `busy` lists every booking and personal event in 24h time, with Full Slate's service text.
+- **If `problems` is not empty, do not use that day.** Wait 3 seconds and run it again once; if
+  there are still problems, leave the day out and put the problems in the log. In particular,
+  "has not finished loading" means the grid looked empty: never treat that as a free day.
+- **Wait for each day to load** (about 2 seconds) after moving before running the script.
+- **Move between days:** the right arrow just after the date heading (e.g. "Nov 11") goes forward
+  one day. The URL doesn't change. Today + 14 is reachable. "Today" goes back to today.
+- **How the script finds staff:** the column under the header initials (`r` Rachel, `x` Xavier,
+  `s` Sammy) and each entry's color class (`schedule-da70d6` Rachel, `schedule-5644ac` Xavier,
+  `schedule-69ab2b` Sammy). The two must agree, or it reports a problem. If staff are added,
+  renamed or recolored in Full Slate, update `STAFF` at the top of the script (a human change,
+  not the hourly task).
+- **Service text:** 🤘 shows as the word "Longhorn" (e.g. "Longhorn Body Comp FIT"). Several
+  services in one booking are comma-separated. Match them with CONTEXT.md's table.
+- **Ignore** everything outside the three columns, the cookie banner, and the help chat popup.
+  Weekends are usually fully shaded for Xavier and Sammy. Rachel's column was unshaded 8–5 on
+  Saturday Nov 14, so trust the shading, not the weekday.
 
 ## Never
 
 - Never click Book, Cancel, Edit, Reschedule, Delete, Confirm, or Save inside Full Slate.
 - Never type into any Full Slate field except a date navigation control if one is required to
   move between days.
+- Never run JavaScript in Full Slate other than `read-day.js` as written. Never click through
+  JavaScript, and never change the page.
 - Never touch any file other than public/availability.json and logs/.
 - Never force push. If push is rejected, `git pull --rebase` once, then push once, then stop.
 

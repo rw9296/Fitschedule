@@ -72,6 +72,9 @@ Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say 
   `.claude/skills/sync-availability/SKILL.md` is `TBD`, the skill only reads the schedule and
   writes how it reads as text to `logs/discovery-*.md`. Fill in the "Reading the schedule" notes,
   set `READING_NOTES` to `done`, then commit.
+- **Reading the page:** entry text in Full Slate doesn't name the staff member, so the sync runs the
+  read-only script `.claude/skills/sync-availability/read-day.js` on each day in Day view. It
+  returns each person's working hours and bookings. Discovery was done on 2026-11-11.
 - **After that:** each run reads the schedule, works out the openings, builds the file with
   `scripts/write-availability.js`, validates it, and commits and pushes only
   `public/availability.json`.

@@ -40,12 +40,32 @@ Lactate FIT (its name in Full Slate too) is the "lactate threshold only" test ($
 https://sites.edb.utexas.edu/fit/aerobic-fit-with-lactate/. That page also offers VO₂ max plus
 lactate ("Aerobic FIT with Lactate", 2 hours, $150), which is booked as its own service.
 
-Full Slate service names confirmed so far: Body Comp FIT (the DXA scan, once labeled "DXA only"),
-Aerobic FIT (the VO₂ max test, once labeled "VO₂ only"), Lactate FIT, Aerobic FIT with Lactate.
-Unconfirmed: the Full Slate names for Bone Density FIT, Muscle FIT and RMR.
+**Every service name in Full Slate starts with 🤘** (Hook 'em). In page text it reads as the word
+**"Longhorn"**. When matching, ignore it and any spacing after it: "🤘 Body Comp FIT" /
+"Longhorn Body Comp FIT" in Full Slate is "Body Comp FIT" on the site.
 
-**Every service name in Full Slate starts with 🤘** (Hook 'em). When matching, ignore it and any spacing after it: "🤘 Body Comp FIT" in
-Full Slate is "Body Comp FIT" on the site.
+### Full Slate names and equipment
+
+Confirmed from the 2026-11-11 discovery run and the owner. One booking can list several services,
+comma-separated (e.g. "Longhorn Body Comp FIT, Longhorn Bone Density FIT").
+
+| Full Slate name | Site name | Uses |
+| --- | --- | --- |
+| Longhorn Body Comp FIT | Body Comp FIT | DXA |
+| Longhorn Bone Density FIT | Bone Density FIT | DXA |
+| Longhorn Aerobic FIT | Aerobic FIT | Metabolic cart |
+| Longhorn Aerobic FIT with Lactate | Aerobic FIT with Lactate | Metabolic cart |
+| Longhorn Lactate FIT | Lactate FIT | Metabolic cart |
+| Longhorn Calorie FIT | RMR | Metabolic cart |
+| Longhorn Muscle FIT | Muscle FIT | Neither |
+| Student Body Comp FIT | (not offered on the site) | DXA |
+| GetFIT Pre DXA | (not offered on the site) | DXA |
+| GetFIT Post DXA | (not offered on the site) | DXA |
+| GF Aerobic | (not offered on the site) | Neither |
+
+Every booking blocks its staff member, whatever the service. Any other service name not in this
+table: the sync treats it as using **both** machines (the safe choice: it hides times rather than
+offering a wrong one) and lists the name in its log so it can be added here.
 
 RMR is called "Calorie FIT (RMR)" on the FIT website (details from
 https://sites.edb.utexas.edu/fit/calorie-fit/). It uses a Parvo Medics TrueOne 2400 metabolic
@@ -76,6 +96,10 @@ The sync applies these when working out openings from the staff schedule.
   Watson does all of it. RMR first, then DXA.
 - **RMR is Rachel Watson only.** No one else performs RMR, so RMR and RMR + Body Comp FIT openings
   require Rachel to be free for the whole appointment.
+
+- **Working hours:** only a staff member's unshaded hours in Full Slate are offered. A booking
+  outside those hours (e.g. a 7:30 AM before an 8:00 start) doesn't make that time open.
+- **Personal events** (Lunch, Eat, meetings: entries with no service) mean that person is busy.
 
 - **RMR start times:** 7:30 AM to 9:00 AM only. A 9:30 AM start is sometimes possible, depending
   on the client's wake-up time. The site doesn't list it; clients can text to ask.
@@ -122,6 +146,14 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 ## Decisions log
 
 Newest first. One line each: date, decision, why.
+
+- **2026-11-11:** The sync reads the schedule's page structure (read-only JavaScript), not plain
+  text, and identifies staff by each entry's color class. Why: entry text doesn't name the staff
+  member (discovery run).
+- **2026-11-11:** Unknown Full Slate service names count as using both DXA and the cart. Why: hide
+  a time rather than offer a wrong one.
+- **2026-11-11:** Only unshaded working hours are offered; personal events block the person.
+  Why: owner's rule.
 
 - **2026-11-11:** The sync reads only the logged-in staff schedule through Claude in Chrome and works
   out openings from Rachel's, Xavier's and Sammy's appointments using the rules in this file. No
