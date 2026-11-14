@@ -62,6 +62,7 @@ comma-separated (e.g. "Longhorn Body Comp FIT, Longhorn Bone Density FIT").
 | GetFIT Pre DXA | (not offered on the site) | DXA |
 | GetFIT Post DXA | (not offered on the site) | DXA |
 | GF Aerobic | (not offered on the site) | Neither |
+| Longhorn Health Coach Check In | (not offered on the site) | Neither (virtual, on Zoom) |
 
 Every booking blocks its staff member, whatever the service. Any other service name not in this
 table: the sync treats it as using **both** machines (the safe choice: it hides times rather than
@@ -147,6 +148,9 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 ## Decisions log
 
 Newest first. One line each: date, decision, why.
+
+- **2026-11-14:** "Health Coach Check In" uses no machines; it still blocks the staff member.
+  Why: owner confirmed it's a virtual Zoom call.
 
 - **2026-11-14:** Weekdays only: no Saturday or Sunday times are offered, whatever Full Slate
   shows. `validate.js` rejects weekend dates. Replaces the 2026-11-11 weekend entry below. Why:
