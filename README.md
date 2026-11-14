@@ -50,6 +50,9 @@ sync, so an older sample file fails until you run `npm run sample` again.
 4. DNS for fitopenings.com is at Porkbun (registered 2026-11-14): four `A` records for the root
    (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and `www` CNAME `rw9296.github.io`.
    Keep auto-renew on so the link never breaks.
+5. fitopenings.com is a **verified domain** on the rw9296 GitHub account (Settings > Pages), so no
+   one else can publish GitHub Pages on it. That relies on the TXT record
+   `_github-pages-challenge-rw9296` at Porkbun: don't delete it.
 
 The fonts (Barlow Condensed, Source Sans 3) are self-hosted in `public/fonts/` under the SIL Open
 Font License, so the page makes no requests to other sites.
