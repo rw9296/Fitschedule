@@ -32,6 +32,8 @@ npm start           # http://localhost:3000
 | `npm run sample` | Writes fake data with `updated` set to now (America/Chicago) |
 | `npm run sample -- --hours-ago 3` | Same, but 3 hours old, to see the stale banner |
 | `npm run sample -- --empty` | No slots, to see the empty state |
+| `npm test` | Tests the openings calculator's rules (cart, DXA limit, staff, RMR window, weekends…) |
+| `npm run openings -- days.jsonl` | Works out openings from `read-day.js` results (one per line) |
 
 `validate` requires `updated` to be within the last 15 minutes. That's on purpose for the hourly
 sync, so an older sample file fails until you run `npm run sample` again.
@@ -76,7 +78,8 @@ Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say 
 - **Reading the page:** entry text in Full Slate doesn't name the staff member, so the sync runs the
   read-only script `.claude/skills/sync-availability/read-day.js` on each day in Day view. It
   returns each person's working hours and bookings. Discovery was done on 2026-11-11.
-- **After that:** each run reads the schedule, works out the openings, builds the file with
+- **After that:** each run reads the schedule, works out the openings with
+  `scripts/compute-openings.js` (the rules from `CONTEXT.md`, as code), builds the file with
   `scripts/write-availability.js`, validates it, and commits and pushes only
   `public/availability.json`.
 - **Failures:** if validation fails or the slot count drops more than 60%, nothing is committed

@@ -149,6 +149,12 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-14:** Openings are worked out by `scripts/compute-openings.js` (with `npm test`), not by
+  the model. Its `EQUIP` and `SERVICES` must stay in step with this file. Why: the hourly sync
+  runs unattended and needs the same answer every time.
+- **2026-11-14:** Hourly sync scheduled on the owner's Mac, every day 7 AM–9 PM. Why: keep the
+  site fresh so the stale banner stays off.
+
 - **2026-11-14:** "Health Coach Check In" uses no machines; it still blocks the staff member.
   Why: owner confirmed it's a virtual Zoom call.
 

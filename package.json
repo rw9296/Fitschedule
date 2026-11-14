@@ -4,7 +4,9 @@
   "scripts": {
     "start": "serve public -l ${PORT:-3000} --no-clipboard",
     "validate": "node scripts/validate.js",
-    "sample": "node scripts/sample.js"
+    "sample": "node scripts/sample.js",
+    "test": "node scripts/compute-openings.test.js",
+    "openings": "node scripts/compute-openings.js"
   },
   "devDependencies": {
     "serve": "^14"

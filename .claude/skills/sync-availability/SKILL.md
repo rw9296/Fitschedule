@@ -52,31 +52,27 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 
 ## Sync run
 
+0. In the repo folder, run `git pull --ff-only` so you start from the latest commit. If it
+   fails, log it and end.
 1. Use Claude in Chrome. Open a NEW tab for SCHEDULE_URL. Do not reuse or disturb the owner's
    existing tabs.
-2. For each **weekday (Mon–Fri)** from today through today + DAYS_AHEAD, read Rachel's, Xavier's and Sammy's
-   working hours and busy blocks with `read-day.js`, as described in "Reading the schedule" below.
+2. For each **weekday (Mon–Fri)** from today through today + DAYS_AHEAD, read Rachel's, Xavier's
+   and Sammy's working hours and busy blocks with `read-day.js`, as described in "Reading the
+   schedule" below. Check each result's `date` is the day you expected (if the arrow click
+   missed, the date repeats: find the arrow again and retry). Append each result, exactly as
+   returned, as one line to a scratch file outside the repo: `$TMPDIR/fitsync-days.jsonl`
+   (start it empty each run). Results with `problems` go in too; the calculator skips them.
    The source label is `dashboard_calendar`. Use `dashboard_calendar_vision` only if you had to
    read a day from a screenshot instead (avoid it: screenshots can't tell staff columns apart
    reliably).
-3. Work out openings from what you read, using CONTEXT.md:
-   - Candidate start times are on the hour and half hour, inside the staff member's working hours,
-     with the whole service ending by the end of those hours. Skip times already past today.
-   - The staff member (or the allowed Rachel → Xavier/Sammy split for Body Comp + an aerobic
-     test) must be free for the service's whole length. Every busy block counts, including
-     personal events and services the site doesn't offer.
-   - Which machine each busy block uses comes from the "Full Slate names and equipment" table in
-     CONTEXT.md. A service name not in that table counts as using BOTH machines; list each such
-     name in your final report so it can be added.
-   - Metabolic cart: no overlap with any other cart service by the three staff.
-   - DXA scanner: no more than two DXA appointments overlapping at any moment.
-   - RMR and RMR + Body Comp FIT: Rachel only, starts 7:30–9:00 AM only.
-   - Bone Density FIT: never list it as times (clients text any 30-minute time; the site says so).
-   If a day's read was incomplete or ambiguous, leave that day out rather than guess.
-4. Write the openings to a scratch file outside the repo (e.g. `$TMPDIR/slots.json`) as a
-   flat JSON array, using the site's service names from SERVICES_TO_SHOW:
-   `[{"date":"2026-11-10","time":"13:30","service":"Body Comp FIT"}, ...]`
-   Dates YYYY-MM-DD, times 24h HH:MM, local Central time exactly as Full Slate shows them.
+3. Work out the openings with the calculator. Never work them out by hand:
+   `node scripts/compute-openings.js $TMPDIR/fitsync-days.jsonl > $TMPDIR/slots.json`
+   It applies CONTEXT.md's rules (hours, staff skills, the Rachel → Xavier/Sammy split, one
+   metabolic cart, at most two DXA at once, RMR 7:30–9:00, no Bone Density times, weekdays only,
+   no times already past). Its notes go to stderr: report any skipped days, and any
+   `UNKNOWN service names` so they can be added to CONTEXT.md and the calculator's `EQUIP`.
+   If it exits non-zero, log it and end.
+4. If every weekday was skipped (all had problems), do not continue: log it and end.
 5. Build the file: `node scripts/write-availability.js --source <label> $TMPDIR/slots.json`
    - Exit 2 means a suspicious drop (more than 60% fewer slots than last run). Do not commit.
      Log it and end. Full Slate UI changes usually look like "everything disappeared".
