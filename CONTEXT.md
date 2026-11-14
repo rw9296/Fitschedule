@@ -6,6 +6,7 @@ this file records what we've learned and decided since. Keep it current (see CLA
 ## Business
 
 - **Name:** Fitness Institute of Texas (FIT), UT Austin. Website: https://sites.edb.utexas.edu/fit/
+- **This site:** https://fitopenings.com (old address https://rw9296.github.io/Fitschedule/ redirects)
 - **Texting number:** 512-703-0780 (`+15127030780`). Used everywhere on this site. Staff confirm by
   text and book by hand in Full Slate.
 - **Calling number:** 512-471-0081. This is the number on the FIT website. Not shown on this site.
@@ -148,6 +149,10 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 ## Decisions log
 
 Newest first. One line each: date, decision, why.
+
+- **2026-11-14:** The site's address is **https://fitopenings.com** (bought at Porkbun, DNS there,
+  custom domain on GitHub Pages); www and the github.io link redirect to it. Why: a short,
+  memorable link for the FIT website and texts.
 
 - **2026-11-14:** Openings are worked out by `scripts/compute-openings.js` (with `npm test`), not by
   the model. Its `EQUIP` and `SERVICES` must stay in step with this file. Why: the hourly sync

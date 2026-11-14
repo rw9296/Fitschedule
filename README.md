@@ -44,7 +44,12 @@ sync, so an older sample file fails until you run `npm run sample` again.
    do this once.
 2. Every push to `main` runs `.github/workflows/pages.yml`. It checks `availability.json` is
    well-formed and then publishes `public/`. If the check fails, the previous site stays up.
-3. The site is at `https://rw9296.github.io/Fitschedule/`. The **Actions** tab shows each deploy.
+3. The site is at **https://fitopenings.com** (custom domain, set in repo Settings > Pages).
+   `www.fitopenings.com` and the old `https://rw9296.github.io/Fitschedule/` redirect to it.
+   The **Actions** tab shows each deploy.
+4. DNS for fitopenings.com is at Porkbun (registered 2026-11-14): four `A` records for the root
+   (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and `www` CNAME `rw9296.github.io`.
+   Keep auto-renew on so the link never breaks.
 
 The fonts (Barlow Condensed, Source Sans 3) are self-hosted in `public/fonts/` under the SIL Open
 Font License, so the page makes no requests to other sites.
