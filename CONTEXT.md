@@ -97,6 +97,7 @@ The sync applies these when working out openings from the staff schedule.
 - **RMR is Rachel Watson only.** No one else performs RMR, so RMR and RMR + Body Comp FIT openings
   require Rachel to be free for the whole appointment.
 
+- **Weekdays only:** Monday–Friday. No Saturday or Sunday times, even if Full Slate shows hours.
 - **Working hours:** only a staff member's unshaded hours in Full Slate are offered. A booking
   outside those hours (e.g. a 7:30 AM before an 8:00 start) doesn't make that time open.
 - **Personal events** (Lunch, Eat, meetings: entries with no service) mean that person is busy.
@@ -129,7 +130,7 @@ to be filled in.
 
 | Staff member | Full Slate color | Services they can perform | Notes (days, hours, limits) |
 | --- | --- | --- | --- |
-| Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Works some weekend hours (as shaded in Full Slate). Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
+| Rachel Watson | pink / lilac | RMR (only she does it), RMR + Body Comp FIT, Body Comp FIT, Bone Density FIT, Muscle FIT | Owner; signs off the site; the person working with Claude on this project. Has some weekend hours in Full Slate, but the site offers weekdays only. Not Aerobic FIT, so not Body Comp + Aerobic FIT unless the parts can be split between staff (unconfirmed) |
 | Xavier Cantu | purple | Everything except RMR (all single services and combinations) | Takes over the aerobic part of a combo after Rachel's DXA |
 | Angeles Villarreal | teal | Not booked by text | |
 | Brittany Crim | blue | Not booked by text | Same-looking blue as Jacob Soriano |
@@ -147,11 +148,16 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-14:** Weekdays only: no Saturday or Sunday times are offered, whatever Full Slate
+  shows. `validate.js` rejects weekend dates. Replaces the 2026-11-11 weekend entry below. Why:
+  owner's request.
+
 - **2026-11-11:** The site shows the next 7 days (was 14), and Bone Density FIT is never listed as
   times. Why: the first real sync found 633 openings over 14 days, over the 300 limit and too many
   to scroll; owner chose this. Bone Density already says "text us any 30-minute slot".
-- **2026-11-11:** Rachel works some weekend hours (unshaded Saturdays 8–5, Sundays 2–4 PM in Full
-  Slate), so weekend openings with her are offered. Why: owner confirmed.
+- **2026-11-11:** ~~Rachel works some weekend hours (unshaded Saturdays 8–5, Sundays 2–4 PM in Full
+  Slate), so weekend openings with her are offered.~~ (Replaced 2026-11-14: weekdays only.) Why:
+  owner confirmed.
 
 - **2026-11-11:** The sync reads the schedule's page structure (read-only JavaScript), not plain
   text, and identifies staff by each entry's color class. Why: entry text doesn't name the staff

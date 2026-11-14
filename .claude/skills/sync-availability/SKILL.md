@@ -54,7 +54,7 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 
 1. Use Claude in Chrome. Open a NEW tab for SCHEDULE_URL. Do not reuse or disturb the owner's
    existing tabs.
-2. For each day from today through today + DAYS_AHEAD, read Rachel's, Xavier's and Sammy's
+2. For each **weekday (Mon–Fri)** from today through today + DAYS_AHEAD, read Rachel's, Xavier's and Sammy's
    working hours and busy blocks with `read-day.js`, as described in "Reading the schedule" below.
    The source label is `dashboard_calendar`. Use `dashboard_calendar_vision` only if you had to
    read a day from a screenshot instead (avoid it: screenshots can't tell staff columns apart
@@ -114,16 +114,17 @@ initials). So read the page structure with the read-only script `read-day.js` in
 - **Wait for each day to load** (about 2 seconds) after moving before running the script.
 - **Move between days:** the right arrow just after the date heading (e.g. "Nov 11") goes forward
   one day. The URL doesn't change. Today + 14 is reachable. "Today" goes back to today.
-- **How the script finds staff:** the column under the header initials (`r` Rachel, `x` Xavier,
-  `s` Sammy) and each entry's color class (`schedule-da70d6` Rachel, `schedule-5644ac` Xavier,
+- **How the script finds staff:** the column under the header (initials `r`/`x`/`s` in a narrow
+  window, full names like "Rachel Watson" in a wide one; either works) and each entry's color class (`schedule-da70d6` Rachel, `schedule-5644ac` Xavier,
   `schedule-69ab2b` Sammy). The two must agree, or it reports a problem. If staff are added,
   renamed or recolored in Full Slate, update `STAFF` at the top of the script (a human change,
   not the hourly task).
 - **Service text:** 🤘 shows as the word "Longhorn" (e.g. "Longhorn Body Comp FIT"). Several
   services in one booking are comma-separated. Match them with CONTEXT.md's table.
 - **Ignore** everything outside the three columns, the cookie banner, and the help chat popup.
-  Weekends are usually fully shaded for Xavier and Sammy. Rachel's column was unshaded 8–5 on
-  Saturday Nov 14, so trust the shading, not the weekday.
+  Skip Saturdays and Sundays entirely (click past them without reading): the site offers
+  weekdays only, even though Rachel's column has some weekend hours, and `npm run validate`
+  rejects weekend dates.
 
 ## Never
 

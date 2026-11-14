@@ -6,10 +6,11 @@
 // entry's color class. Anything unexpected goes in `problems`; if that's not empty, don't use the
 // day (log it instead).
 (() => {
+  // Headers show initials in a narrow window and full names in a wide one; accept either.
   const STAFF = {
-    Rachel: { initials: 'r', color: 'da70d6' },
-    Xavier: { initials: 'x', color: '5644ac' },
-    Sammy: { initials: 's', color: '69ab2b' },
+    Rachel: { initials: 'r', full: 'Rachel Watson', color: 'da70d6' },
+    Xavier: { initials: 'x', full: 'Xavier Cantu', color: '5644ac' },
+    Sammy: { initials: 's', full: 'Sammy Reyes', color: '69ab2b' },
   };
   const problems = [];
   const pad = (n) => String(n).padStart(2, '0');
@@ -41,11 +42,11 @@
   const headers = [...document.querySelectorAll('li')].filter((li) => {
     const t = li.textContent.trim();
     const r = li.getBoundingClientRect();
-    return t.length > 0 && t.length <= 4 && r.width > 20 && r.width < 200;
+    return t.length > 0 && t.length <= 40 && r.width > 20 && r.width < 300;
   });
   const col = {};
   for (const [name, s] of Object.entries(STAFF)) {
-    const matches = headers.filter((li) => li.textContent.trim() === s.initials);
+    const matches = headers.filter((li) => [s.initials, s.full].includes(li.textContent.trim()));
     if (matches.length !== 1) { problems.push(`${name}: ${matches.length} header columns "${s.initials}"`); continue; }
     const r = matches[0].getBoundingClientRect();
     col[name] = [r.left, r.right];

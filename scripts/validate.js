@@ -111,6 +111,9 @@ data.days.forEach((day, i) => {
   const dMs = wallMs(date);
   if (!structureOnly && dMs < todayMs) fail(`${where}.date ${day.date} is in the past`);
   if (!structureOnly && dMs > lastAllowedMs) fail(`${where}.date ${day.date} is more than ${DAYS_AHEAD + 1} days ahead`);
+  // Weekdays only (owner's rule, 2026-11-14).
+  const dow = new Date(Date.UTC(date.y, date.mo - 1, date.d)).getUTCDay();
+  if (!structureOnly && (dow === 0 || dow === 6)) fail(`${where}.date ${day.date} is a weekend; only Monday-Friday are offered`);
   if (prevDate !== null && day.date <= prevDate) fail(`days not sorted or duplicated: ${day.date} comes after ${prevDate}`);
   prevDate = day.date;
 

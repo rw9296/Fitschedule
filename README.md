@@ -68,6 +68,7 @@ Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say 
 - **Source:** only the logged-in staff schedule (`app.fullslate.com/schedule`), read through
   Claude in Chrome. There is no public booking page. The sync reads Rachel's, Xavier's and Sammy's
   working hours and appointments and works out openings from the rules in `CONTEXT.md`.
+  Weekdays only: `npm run validate` rejects Saturday and Sunday dates.
 - **First run (discovery):** while `READING_NOTES` in
   `.claude/skills/sync-availability/SKILL.md` is `TBD`, the skill only reads the schedule and
   writes how it reads as text to `logs/discovery-*.md`. Fill in the "Reading the schedule" notes,
