@@ -150,6 +150,9 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-15:** Shared links show a preview card: `public/og.png` (1200×630, the page's colors
+  and fonts) plus Open Graph tags in index.html, and a FIT icon for tabs and home screens. Why: the
+  link gets texted and posted, and a bare URL looks like spam.
 - **2026-11-14:** The site's address is **https://fitopenings.com** (bought at Porkbun, DNS there,
   custom domain on GitHub Pages); www and the github.io link redirect to it. Why: a short,
   memorable link for the FIT website and texts.

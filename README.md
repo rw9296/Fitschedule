@@ -54,6 +54,11 @@ sync, so an older sample file fails until you run `npm run sample` again.
    one else can publish GitHub Pages on it. That relies on the TXT record
    `_github-pages-challenge-rw9296` at Porkbun: don't delete it.
 
+**Link preview:** sharing the link shows `public/og.png` with the title and description from the
+Open Graph tags in `public/index.html`. If you change the image, keep it 1200×630 and give it a new
+name (e.g. `og-2.png`) in `og:image`, because iMessage and Facebook cache previews. Facebook's
+Sharing Debugger can refresh theirs.
+
 The fonts (Barlow Condensed, Source Sans 3) are self-hosted in `public/fonts/` under the SIL Open
 Font License, so the page makes no requests to other sites.
 
