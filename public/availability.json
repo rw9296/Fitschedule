@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T14:25:22",
+  "updated": "2026-11-17T15:12:31",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -7,18 +7,6 @@
     {
       "date": "2026-11-17",
       "slots": [
-        {
-          "time": "14:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "14:30",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "15:00",
-          "service": "Body Comp FIT"
-        },
         {
           "time": "15:30",
           "service": "Body Comp FIT"
