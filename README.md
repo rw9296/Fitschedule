@@ -97,3 +97,5 @@ Each run: open Claude Code in the folder (`cd ~/fitschedule && claude`) and say 
   `public/availability.json`.
 - **Failures:** if validation fails or the slot count drops more than 60%, nothing is committed
   and a note goes to `logs/` (not committed).
+- **Tabs:** every run, including a failed one, closes its own Chrome tab group when it ends. If
+  Chrome was disconnected and it couldn't, the log names the tab to close by hand.

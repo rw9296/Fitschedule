@@ -150,6 +150,9 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-17:** Every sync run ends by closing its own Claude in Chrome tab group, including runs
+  that fail or stop early (a "Finish" step in the skill and the hourly task). Why: tabs from earlier
+  runs were piling up in Chrome.
 - **2026-11-15:** Shared links show a preview card: `public/og.png` (1200×630, the page's colors
   and fonts) plus Open Graph tags in index.html, and a FIT icon for tabs and home screens. Why: the
   link gets texted and posted, and a bare URL looks like spam.

@@ -46,7 +46,7 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
    - The exact Full Slate spelling of every service in SERVICES_TO_SHOW that appears.
    - How to move between days or weeks, and whether 14 days ahead is reachable.
 4. Write `logs/discovery-YYYY-MM-DD-HHMM.md` with all of the above and a short sample of the page
-   text for one day. Close your tab.
+   text for one day. Then do **Finish** below.
 5. Report what you found. A human then fills in "Reading the schedule" below, sets READING_NOTES
    to `done`, and commits that change. (The hourly task never edits this file.)
 
@@ -55,7 +55,8 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 0. In the repo folder, run `git pull --ff-only` so you start from the latest commit. If it
    fails, log it and end.
 1. Use Claude in Chrome. Open a NEW tab for SCHEDULE_URL. Do not reuse or disturb the owner's
-   existing tabs.
+   existing tabs. Note the tab ID: from here on, every way this run ends goes through
+   **Finish** below, including failures and "log it and end".
 2. For each **weekday (Mon–Fri)** from today through today + DAYS_AHEAD, read Rachel's, Xavier's
    and Sammy's working hours and busy blocks with `read-day.js`, as described in "Reading the
    schedule" below. Check each result's `date` is the day you expected (if the arrow click
@@ -83,7 +84,18 @@ Goal: learn how the staff schedule reads as text, so sync runs can read it the s
 7. If `git diff --quiet public/availability.json` shows only `updated` changed, still commit.
    The fresh timestamp is what keeps the stale banner off.
 8. `git add public/availability.json && git commit -m "availability HH:MM" && git push`
-9. Close the tab you opened. Report one line: slot count, days, source used.
+9. Do **Finish** below, then report one line: slot count, days, source used.
+
+## Finish (every run, success or failure)
+
+Always the last step, even when the run stopped early, so tabs never pile up in Chrome:
+
+1. Call `tabs_context_mcp` (without `createIfEmpty`) to list the tabs in this run's own tab group.
+2. Close every tab in that group with `tabs_close_mcp`. Closing the last one removes the group too.
+   Only this run's group: never close the owner's tabs or another run's group.
+3. Call `tabs_context_mcp` once more and check the group is gone (no tabs listed).
+4. If Chrome isn't connected and the tab can't be closed, say so in the log and the final line,
+   with the tab ID, so the owner can close it by hand.
 
 ## Reading the schedule
 
