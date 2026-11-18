@@ -1,46 +1,9 @@
 {
-  "updated": "2026-11-18T08:12:31",
+  "updated": "2026-11-18T10:34:25",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
   "days": [
-    {
-      "date": "2026-11-18",
-      "slots": [
-        {
-          "time": "08:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "10:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "11:30",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "11:30",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "11:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "11:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "12:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "12:00",
-          "service": "Lactate FIT"
-        }
-      ]
-    },
     {
       "date": "2026-11-19",
       "slots": [
@@ -51,6 +14,18 @@
         {
           "time": "10:00",
           "service": "Lactate FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "11:30",
+          "service": "Lactate FIT"
+        },
+        {
+          "time": "12:00",
+          "service": "Body Comp FIT"
         },
         {
           "time": "13:30",
@@ -157,102 +132,6 @@
     {
       "date": "2026-11-20",
       "slots": [
-        {
-          "time": "07:30",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Aerobic FIT with Lactate"
-        },
-        {
-          "time": "07:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Body Comp + Aerobic FIT with Lactate"
-        },
-        {
-          "time": "07:30",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Aerobic FIT with Lactate"
-        },
-        {
-          "time": "08:00",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Body Comp + Aerobic FIT with Lactate"
-        },
-        {
-          "time": "08:00",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Aerobic FIT with Lactate"
-        },
-        {
-          "time": "08:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "09:00",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "09:00",
-          "service": "Lactate FIT"
-        },
         {
           "time": "09:30",
           "service": "Lactate FIT"
@@ -688,14 +567,6 @@
     {
       "date": "2026-11-25",
       "slots": [
-        {
-          "time": "13:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "14:00",
-          "service": "Body Comp FIT"
-        },
         {
           "time": "14:30",
           "service": "Body Comp FIT"
