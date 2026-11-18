@@ -1,9 +1,18 @@
 {
-  "updated": "2026-11-18T11:12:32",
+  "updated": "2026-11-18T12:12:48",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
   "days": [
+    {
+      "date": "2026-11-18",
+      "slots": [
+        {
+          "time": "13:00",
+          "service": "Lactate FIT"
+        }
+      ]
+    },
     {
       "date": "2026-11-19",
       "slots": [
