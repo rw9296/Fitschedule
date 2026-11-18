@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T15:12:06",
+  "updated": "2026-11-18T16:12:13",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -14,10 +14,6 @@
         {
           "time": "11:00",
           "service": "Lactate FIT"
-        },
-        {
-          "time": "12:00",
-          "service": "Body Comp FIT"
         }
       ]
     },
@@ -38,6 +34,26 @@
         },
         {
           "time": "11:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "13:30",
+          "service": "Muscle FIT"
+        },
+        {
+          "time": "14:00",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "14:30",
+          "service": "Body Comp FIT"
+        },
+        {
+          "time": "15:00",
           "service": "Body Comp FIT"
         }
       ]
