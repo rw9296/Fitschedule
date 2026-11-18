@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T13:12:17",
+  "updated": "2026-11-18T14:12:17",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -203,10 +203,6 @@
         },
         {
           "time": "15:00",
-          "service": "Body Comp + Aerobic FIT with Lactate"
-        },
-        {
-          "time": "15:00",
           "service": "Body Comp + Lactate FIT"
         },
         {
@@ -216,10 +212,6 @@
         {
           "time": "15:00",
           "service": "Lactate FIT"
-        },
-        {
-          "time": "15:00",
-          "service": "Muscle FIT"
         },
         {
           "time": "15:30",
@@ -227,14 +219,6 @@
         },
         {
           "time": "15:30",
-          "service": "Aerobic FIT with Lactate"
-        },
-        {
-          "time": "15:30",
-          "service": "Body Comp + Aerobic FIT"
-        },
-        {
-          "time": "15:30",
           "service": "Body Comp + Lactate FIT"
         },
         {
@@ -247,26 +231,10 @@
         },
         {
           "time": "16:00",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "16:00",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "16:00",
           "service": "Body Comp FIT"
         },
         {
           "time": "16:00",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "16:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "16:30",
           "service": "Lactate FIT"
         }
       ]
@@ -292,10 +260,6 @@
         },
         {
           "time": "13:00",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "13:00",
           "service": "Body Comp FIT"
         },
         {
@@ -305,10 +269,6 @@
         {
           "time": "13:30",
           "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:30",
-          "service": "Lactate FIT"
         },
         {
           "time": "13:30",
