@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T07:56:21",
+  "updated": "2026-11-18T08:12:31",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -7,14 +7,6 @@
     {
       "date": "2026-11-18",
       "slots": [
-        {
-          "time": "08:00",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Lactate FIT"
-        },
         {
           "time": "08:30",
           "service": "Lactate FIT"
