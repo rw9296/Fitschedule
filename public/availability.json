@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T16:12:13",
+  "updated": "2026-11-18T17:41:55",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -21,14 +21,6 @@
       "date": "2026-11-20",
       "slots": [
         {
-          "time": "09:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "10:00",
-          "service": "Body Comp FIT"
-        },
-        {
           "time": "10:30",
           "service": "Body Comp FIT"
         },
@@ -38,22 +30,6 @@
         },
         {
           "time": "13:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:30",
-          "service": "Muscle FIT"
-        },
-        {
-          "time": "14:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "14:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "15:00",
           "service": "Body Comp FIT"
         }
       ]
@@ -102,22 +78,6 @@
     {
       "date": "2026-11-24",
       "slots": [
-        {
-          "time": "10:30",
-          "service": "Body Comp + Lactate FIT"
-        },
-        {
-          "time": "10:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "11:00",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "11:00",
-          "service": "Lactate FIT"
-        },
         {
           "time": "13:00",
           "service": "Body Comp FIT"
