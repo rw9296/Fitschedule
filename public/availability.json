@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T08:19:58",
+  "updated": "2026-11-19T09:12:43",
   "timezone": "America/Chicago",
   "days_ahead": 7,
   "source": "dashboard_calendar",
@@ -37,30 +37,6 @@
     {
       "date": "2026-11-23",
       "slots": [
-        {
-          "time": "07:30",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "07:30",
-          "service": "Aerobic FIT with Lactate"
-        },
-        {
-          "time": "07:30",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Aerobic FIT"
-        },
-        {
-          "time": "08:00",
-          "service": "Lactate FIT"
-        },
-        {
-          "time": "08:30",
-          "service": "Lactate FIT"
-        },
         {
           "time": "15:00",
           "service": "Body Comp FIT"
