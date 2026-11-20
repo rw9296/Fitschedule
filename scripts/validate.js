@@ -15,13 +15,13 @@ const path = require('path');
 
 // Keep in sync with "Fill these in" at the top of PLAN.md.
 const TIMEZONE = 'America/Chicago';
-const DAYS_AHEAD = 7;
+const DAYS_AHEAD = 14;
 
 const MAX_AGE_MINUTES = 15;
 const FUTURE_SKEW_MINUTES = 2; // tolerate small clock differences
 const EARLIEST = '06:00';
 const LATEST = '22:00';
-const MAX_SLOTS = 300;
+const MAX_SLOTS = 600;
 
 const args = process.argv.slice(2);
 const structureOnly = args.includes('--structure-only');

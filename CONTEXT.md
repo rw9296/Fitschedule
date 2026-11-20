@@ -150,6 +150,9 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-20:** The site shows the next **14 days** again (rolling; was 7 since 2026-11-11), and the
+  slot limit is 600 (was 300). Why: the owner asked for times through Dec 4, and Thanksgiving week had
+  very few openings. Bone Density FIT stays off and weekends stay off.
 - **2026-11-17:** Every sync run ends by closing its own Claude in Chrome tab group, including runs
   that fail or stop early (a "Finish" step in the skill and the hourly task). Why: tabs from earlier
   runs were piling up in Chrome.

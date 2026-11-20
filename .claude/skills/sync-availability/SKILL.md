@@ -15,7 +15,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
   Body Comp + Aerobic FIT with Lactate (combination) · Body Comp + Lactate FIT (combination) · Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR + Body Comp FIT (combination) · RMR (may appear as "Calorie FIT")
-- DAYS_AHEAD: 7 · TIMEZONE: America/Chicago
+- DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
 - Full Slate service names all start with 🤘. Ignore it when matching names, and
   never put it in availability.json.
 - Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked by text, and only they use the
