@@ -15,7 +15,7 @@ Full Slate is READ ONLY. You are reading a calendar, not using it.
 - SERVICES_TO_SHOW (names on the site; Full Slate may spell them differently, e.g. "VO2"):
   Body Comp + Aerobic FIT (a combination, not a Full Slate service: see CONTEXT.md) ·
   Body Comp + Aerobic FIT with Lactate (combination) · Body Comp + Lactate FIT (combination) · Aerobic FIT · Body Comp FIT · Bone Density FIT · Muscle FIT · Aerobic FIT with Lactate · Lactate FIT · RMR + Body Comp FIT (combination) · RMR (may appear as "Calorie FIT")
-- DAYS_AHEAD: 14 · TIMEZONE: America/Chicago
+- DAYS_AHEAD: 28 · TIMEZONE: America/Chicago
 - Full Slate service names all start with 🤘. Ignore it when matching names, and
   never put it in availability.json.
 - Only Rachel Watson, Xavier Cantu and Sammy Reyes are booked by text, and only they use the
@@ -121,7 +121,7 @@ initials). So read the page structure with the read-only script `read-day.js` in
   "has not finished loading" means the grid looked empty: never treat that as a free day.
 - **Wait for each day to load** (about 2 seconds) after moving before running the script.
 - **Move between days:** the right arrow just after the date heading (e.g. "Nov 11") goes forward
-  one day. The URL doesn't change. Today + 14 is reachable. "Today" goes back to today.
+  one day. The URL doesn't change. Today + 28 is reachable. "Today" goes back to today.
 - **How the script finds staff:** the column under the header (initials `r`/`x`/`s` in a narrow
   window, full names like "Rachel Watson" in a wide one; either works) and each entry's color class (`schedule-da70d6` Rachel, `schedule-5644ac` Xavier,
   `schedule-69ab2b` Sammy). The two must agree, or it reports a problem. If staff are added,

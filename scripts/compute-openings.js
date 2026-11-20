@@ -19,7 +19,7 @@
 const fs = require('fs');
 
 const TIMEZONE = 'America/Chicago';
-const DAYS_AHEAD = 14;
+const DAYS_AHEAD = 28;
 const STEP = 30; // candidate starts on the hour and half hour
 
 // Full Slate service name (🤘/"Longhorn" prefix removed, lower case) -> machine it uses.

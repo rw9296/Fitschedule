@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 
 const TIMEZONE = 'America/Chicago';
-const DAYS_AHEAD = 14;
+const DAYS_AHEAD = 28;
 
 const args = process.argv.slice(2);
 const hoursAgoIdx = args.indexOf('--hours-ago');
