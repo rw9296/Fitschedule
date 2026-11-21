@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T21:19:48",
+  "updated": "2026-11-21T07:20:25",
   "timezone": "America/Chicago",
   "days_ahead": 28,
   "source": "dashboard_calendar",
@@ -35,14 +35,6 @@
         {
           "time": "13:30",
           "service": "Lactate FIT"
-        },
-        {
-          "time": "14:30",
-          "service": "Body Comp FIT"
-        },
-        {
-          "time": "15:00",
-          "service": "Body Comp FIT"
         }
       ]
     },
