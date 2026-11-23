@@ -53,6 +53,12 @@ sync, so an older sample file fails until you run `npm run sample` again.
 5. fitopenings.com is a **verified domain** on the rw9296 GitHub account (Settings > Pages), so no
    one else can publish GitHub Pages on it. That relies on the TXT record
    `_github-pages-challenge-rw9296` at Porkbun: don't delete it.
+6. **If a deploy fails** (e.g. `No artifacts named "github-pages"`, a GitHub-side glitch), the data
+   is still committed; only the publish failed. Don't use **Re-run jobs** on that run: the rerun
+   uploads a second copy of the site, and the deploy then fails with `Multiple artifacts named
+   "github-pages"`. Start a fresh run instead: **Actions > Deploy to GitHub Pages > Run workflow**
+   (branch `main`), or `gh workflow run "Deploy to GitHub Pages" -R rw9296/Fitschedule --ref main`.
+   Or just wait: the next hourly sync's push publishes again.
 
 **Link preview:** sharing the link shows `public/og.png` with the title and description from the
 Open Graph tags in `public/index.html`. If you change the image, keep it 1200×630 and give it a new

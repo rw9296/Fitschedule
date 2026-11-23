@@ -150,6 +150,11 @@ Jacob Soriano share a near-identical blue, and the two first names are spelled d
 
 Newest first. One line each: date, decision, why.
 
+- **2026-11-23:** Fix a failed Pages deploy by starting a fresh run (Run workflow), never by
+  re-running the failed one. Why: on Nov 23 the 2:19 and 2:33 deploys failed on GitHub's side, and
+  re-running the failed one made two copies of the site package, so GitHub couldn't pick one and
+  failed again. A fresh run published at once. See README "Deploy".
+
 - **2026-11-20:** The site shows the next **28 days** (rolling; was 7 since 2026-11-11, then 14 for an
   hour the same morning), and the slot limit is 1500 (was 300). Why: the owner asked for times through
   Dec 18, and Thanksgiving week had very few openings. Bone Density FIT stays off and weekends stay off.
