@@ -16,11 +16,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  # Packaging and publishing are separate jobs (GitHub's recommended layout). With both in one
+  # job, deploy-pages sometimes looked for the package before GitHub had registered it and failed
+  # with 'No artifacts named "github-pages"' (every push on 2026-11-23 afternoon).
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -34,5 +34,12 @@ jobs:
         with:
           path: public
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4

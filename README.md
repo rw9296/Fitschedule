@@ -42,8 +42,10 @@ sync, so an older sample file fails until you run `npm run sample` again.
 
 1. Repo **Settings > Pages > Build and deployment > Source**: choose **GitHub Actions**. You only
    do this once.
-2. Every push to `main` runs `.github/workflows/pages.yml`. It checks `availability.json` is
-   well-formed and then publishes `public/`. If the check fails, the previous site stays up.
+2. Every push to `main` runs `.github/workflows/pages.yml` in two jobs: **build** checks
+   `availability.json` is well-formed and packages `public/`, then **deploy** publishes it. If the
+   check fails, the previous site stays up. A push usually reaches the site in under a minute; the
+   CDN can serve the old copy for up to 10 more minutes.
 3. The site is at **https://fitopenings.com** (custom domain, set in repo Settings > Pages).
    `www.fitopenings.com` and the old `https://rw9296.github.io/Fitschedule/` redirect to it.
    The **Actions** tab shows each deploy.
