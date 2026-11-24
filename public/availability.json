@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T09:13:48",
+  "updated": "2026-11-24T09:26:08",
   "timezone": "America/Chicago",
   "days_ahead": 28,
   "source": "dashboard_calendar",
@@ -46,10 +46,6 @@
         {
           "time": "13:30",
           "service": "Body Comp FIT"
-        },
-        {
-          "time": "13:30",
-          "service": "Muscle FIT"
         },
         {
           "time": "14:00",
