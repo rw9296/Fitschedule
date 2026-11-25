@@ -1,18 +1,9 @@
 {
-  "updated": "2026-11-25T14:18:21",
+  "updated": "2026-11-25T15:18:23",
   "timezone": "America/Chicago",
   "days_ahead": 28,
   "source": "dashboard_calendar",
   "days": [
-    {
-      "date": "2026-11-25",
-      "slots": [
-        {
-          "time": "14:30",
-          "service": "Body Comp FIT"
-        }
-      ]
-    },
     {
       "date": "2026-11-30",
       "slots": [
